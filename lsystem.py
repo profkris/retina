@@ -1479,8 +1479,9 @@ def simulate_cco_seed(prefix='',params=None,max_cycles=10,path=None,plot=False,d
         eye_geom = eye
     cylinders = []
     
-    min_first_branch_length,max_first_branch_length = 1500.,2500. # um
+    min_first_branch_length,max_first_branch_length = 1000.,2500. # um
     first_branch_length = np.clip(np.random.uniform(min_first_branch_length,max_first_branch_length),1.,None)
+    #first_branch_length = 10000.
 
     for quad in ['upper','lower']:
         for vessel in ['artery','vein']:
@@ -1498,7 +1499,7 @@ def simulate_cco_seed(prefix='',params=None,max_cycles=10,path=None,plot=False,d
             
             def _seed_vessel_branching(sim,handedness='R',vessel_type='artery',direction='down',avoid=None):
                 #print(f'Init length: {first_branch_length}')
-                cur_len = first_branch_length + np.clip(np.random.normal(0.,50.),min_first_branch_length,max_first_branch_length)
+                cur_len = first_branch_length + np.clip(np.random.normal(0.,150.),min_first_branch_length,max_first_branch_length)
                 if vessel_type=='artery':
                     diam = sim.eye.adiameter #+np.random.normal(0.,2.)
                 else:
@@ -1529,17 +1530,20 @@ def simulate_cco_seed(prefix='',params=None,max_cycles=10,path=None,plot=False,d
                     _,new_branch = sim.add_t_branch_to_segment(br.root_segment,length=br.root_segment.get_length()*np.random.uniform(0.4,0.8),direction=cdir,fr=fr,diameters=[diameter,diameter])
                     new_branch.growth_process.handedness = 'N'
                 
-                if False:
-                    if np.random.uniform()>0.5: #cur_len>1500. and np.random.uniform()>0.5:
+                if True:
+                    if True: #np.random.uniform()>0.5: #cur_len>1500. and np.random.uniform()>0.5:
                         xdir = 1.
                         rnd_additional_branch(sim,ylim=0.5,xdir=xdir,fr=np.random.uniform(0.01,0.1),direction=direction)
-                    if np.random.uniform()>0.5: #cur_len>1500. and np.random.uniform()>0.5:
-                        xdir = 1.
-                        rnd_additional_branch(sim,ylim=0.5,xdir=xdir,fr=np.random.uniform(0.5,1.0),direction=direction)
+                    #if True: #np.random.uniform()>0.5: #cur_len>1500. and np.random.uniform()>0.5:
+                    #    xdir = 1.
+                    #    rnd_additional_branch(sim,ylim=0.5,xdir=xdir,fr=np.random.uniform(0.5,1.0),direction=direction)
                     
-                    if np.random.uniform()>0.3:  
+                    if True: #np.random.uniform()>0.3:  
                         xdir = -1.
                         rnd_additional_branch(sim,ylim=0.8,xdir=xdir,direction=direction)
+                    if True: #np.random.uniform()>0.3:  
+                        xdir = -1.
+                        rnd_additional_branch(sim,ylim=0.2,xdir=xdir,direction=direction)
                 
                 return vdata
 

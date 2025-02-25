@@ -1272,6 +1272,8 @@ def connect_vessel_endpoints_directly(graph,rad=0.1,furthest_node_distance=1000.
             
     #if len(unconnected_endpoints)>0:
     #    print(f'{len(unconnected_endpoints)} unconnected graph endpoints remaining!')
+    
+    breakpoint()
 
     graph = set_and_write_graph(graph, [nodecoords_new,edgeconn_new,edgepoints_new,nedgepoints_new,radius_new,category_new,mlp_new],None)
     graph = remove_all_endpoints(graph,keep=np.concatenate([inlets,outlets]))
