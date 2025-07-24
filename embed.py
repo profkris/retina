@@ -158,7 +158,7 @@ def embed(graph=None,eye=None,filename=None,efile=None,g_file=None,s_file=None,v
         patch_dim = dim #(dim / patch_factor).astype('int')
         surface = np.zeros(dim,dtype='uint8')
         vessels = np.zeros(dim,dtype='float')
-        
+        #------------------------------Parallel Portion---------------------------#
         parallel = False
         if parallel: # Doesn't seem to work with open3d... :(
             agents = 40

@@ -12,6 +12,8 @@ from retinasim import geometry
 from retinasim.eye import Eye
 from pymira.spatialgraph import update_array_index,delete_vertices
 from retinasim.config import *
+import matplotlib
+matplotlib.use('Agg')
 
 def create_directories(parent_path,name,overwrite_existing=False):
 

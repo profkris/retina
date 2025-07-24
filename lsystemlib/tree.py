@@ -1747,7 +1747,8 @@ class Tree(object):
         ax.set_ylabel('Y')
         ax.set_zlabel('Z')
         if show:
-            plt.show()
+            #plt.show()
+            plt.savefig("tree.png", dpi=300)
         return ax  
         
 #    def add_branch_to_node(self,node,parent_branch,**kwargs): 

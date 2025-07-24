@@ -19,7 +19,8 @@ join = os.path.join
 import open3d as o3d
 
 from retinasim import fovea_sim, geometry
-
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 """
 Class for creating retinal layer meshes
 """
@@ -135,7 +136,9 @@ class RetinaSurface():
                     if i%skip==0 and j%skip==0:
                         ax.plot([x,x+normals[i,j,0]*vl], [y,y+normals[i,j,1]*vl], [surface[i,j],surface[i,j]+normals[i,j,2]*vl])
         if show:
-            plt.show()
+            #plt.show()
+            plt.savefig('retina_surface_plot.png', dpi=300)
+            plt.close()  
         return ax        
         
     def create_raised_indent_surface(self,normal=arr([0.,0.,1.]),fovea_centre=arr([0.,0.,0.]),nr=20,nproj=1001,rng_nsd=4,fw=50.,shoulder_height=[100.,100.],shoulder_sd=[100.,100.],boundary_height=[0.,0.],flatness=0.2,fovea_depth=220.,raised=False,hole=False,intersection_surface=None):
@@ -328,7 +331,7 @@ class RetinaSurface():
         all_faces = arr(faces.copy())
         rem_faces = arr([self.ensure_face_direction(arr([f[0],f[1],f[2]]), combined_points[[f[0],f[1],f[2]]]) for f in faces[arr(del_face)]]) # faces[arr(del_face)] # 
         faces = arr([self.ensure_face_direction(arr([f[0],f[1],f[2]]), combined_points[[f[0],f[1],f[2]]]) for f in faces[~arr(del_face)]]) # faces[~arr(del_face)] #
-        
+    #-----------------------------------Modified Section------------------------------------#
         if plot:
             points = combined_points.copy()
             
@@ -350,10 +353,13 @@ class RetinaSurface():
             meshd.triangles = o3d.utility.Vector3iVector(rem_faces)
             
             #rec_mesh = o3d.geometry.TriangleMesh.create_from_point_cloud_ball_pivoting(pcd, o3d.utility.DoubleVector(radii))
-            o3d.visualization.draw_geometries([pcd,pcd2,mesh],mesh_show_wireframe=True)  #,epcd])
+            #o3d.visualization.draw_geometries([pcd,pcd2,mesh],mesh_show_wireframe=True)  #,epcd])
+            o3d.io.write_triangle_mesh("retina_surface_3d.ply", mesh)
+
         
         return faces
-        
+    #-----------------------------------Modified Section------------------------------------#
+
     def simulate_macula(self,layers=None,layer_thickness=None,ssd=norm(500.,10.),fw=norm(250.,50.),shoulder_sd=None,flatness=uni(0.01,0.08),gap=norm(2.,0.1),boundary_height=arr([0.,0.]),nproj=1001,nr=50,rng_nsd=4,plot=False,plot_projection=False,add_noise=True):
 
         print('Simulating macular geometry...')
@@ -450,7 +456,7 @@ class RetinaSurface():
             surface_coords[i] = coords
             surface_normals[i] = normals
             surface_faces[i] = faces
-              
+        #--------------------------------Updated Version-----------------------------      
         if plot:
             meshes = []
             for i in range(nsurface):
@@ -460,9 +466,16 @@ class RetinaSurface():
                 mesh.triangles = o3d.utility.Vector3iVector(surface_faces[i])
                 meshes.append(mesh)
             
-            o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
+            ombined_mesh = o3d.geometry.TriangleMesh()
+            for mesh in meshes:
+                combined_mesh += mesh  # merge mesh into combined_mesh
+                
+            o3d.io.write_triangle_mesh("combined_surface_1.ply", combined_mesh)
+
+            #o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
             #breakpoint()   
-        
+        #--------------------------------Updated Version-----------------------------      
+
         if plot_projection:
             mn,mx = coords.min(axis=0),coords.max(axis=0)
             cols = np.zeros([nsurface,3],dtype='int16')
@@ -485,8 +498,10 @@ class RetinaSurface():
             axs[1].set(xlabel='y')
             axs[1].set_xlim([self.eye.fovea_centre[1]-1000,self.eye.fovea_centre[1]+1000])
             
-            plt.show()
-            
+            #plt.show()
+            plt.savefig('retina_surface_2.png', dpi=300, bbox_inches='tight')
+            plt.close()
+
         return surface_coords, surface_normals, surface_faces, macula_edge
         
     def delete_faces_below_target_mesh(self, src_mesh, target_mesh, edge_verts=None, max_displacement=2000.):
@@ -602,7 +617,7 @@ class RetinaSurface():
         mesh.vertices = o3d.utility.Vector3dVector(coords[keep_inds])
         mesh.vertex_normals = o3d.utility.Vector3dVector(normals[keep_inds])
         mesh.triangles = o3d.utility.Vector3iVector(new_faces_refac)
-        
+#-----------------------------Modified Version-------------------------------------#        
         if False:
             pcd = o3d.geometry.PointCloud()
             pcd.points = o3d.utility.Vector3dVector(coords[keep_inds])        
@@ -613,11 +628,14 @@ class RetinaSurface():
             pcd1.paint_uniform_color([1,0,0])
             mesh.paint_uniform_color([1,0,0])
             #o3d.visualization.draw_geometries([target_mesh,mesh,pcd],mesh_show_wireframe=True,mesh_show_back_face=True)
-            o3d.visualization.draw_geometries([mesh,pcd,pcd1],mesh_show_wireframe=True,mesh_show_back_face=True)
-
+            #o3d.visualization.draw_geometries([mesh,pcd,pcd1],mesh_show_wireframe=True,mesh_show_back_face=True)
+            o3d.io.write_point_cloud("pcd_keep.ply", pcd)
+            o3d.io.write_point_cloud("pcd_del.ply", pcd1)
+            o3d.io.write_triangle_mesh("mesh.ply", mesh)
         #breakpoint()        
         return mesh, keep_inds, new_inds
-        
+#-----------------------------Modified Version-------------------------------------#        
+       
     def simulate_optic_nerve(self,layers=None,layer_thickness=None,ssd=uni(300.,600.),vessel_depth=5000.,fw=None,shoulder_sd=None,flatness=0.5,gap=2.,boundary_height=[0.,0.],nproj=1001,nr=50,rng_nsd=4,plot=False,height=None,depth=None,shoulder_height=arr([50.,50.]),plot_projection=False,add_noise=True):
     
         print('Simulating optic nerve geometry...')
@@ -743,7 +761,8 @@ class RetinaSurface():
             surface_coords[i] = coords
             surface_normals[i] = normals
             surface_faces[i] = faces
-        
+
+#--------------------------------Modified Version---------------------------------------#                    
         if False: # plot:      
             mn,mx = coords.min(axis=0),coords.max(axis=0)
             cols = np.zeros([nsurface,3],dtype='int16')
@@ -767,9 +786,12 @@ class RetinaSurface():
                 #mesh.paint_uniform_color([rmp[i], 0, np.flip(rmp[i])])
                 meshes.append(mesh)
                 
-            o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
-            
-            
+            #o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
+            combined_mesh = o3d.geometry.TriangleMesh()
+            for mesh in meshes:
+                combined_mesh += mesh
+            o3d.io.write_triangle_mesh("combined_surface_2.ply", combined_mesh)
+#--------------------------------Modified Version---------------------------------------#            
         if plot:
             meshes = []
             for i in range(nsurface):
@@ -779,9 +801,14 @@ class RetinaSurface():
                 mesh.triangles = o3d.utility.Vector3iVector(surface_faces[i])
                 meshes.append(mesh)
             
-            o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
+            #o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
             #breakpoint()   
-        
+            combined_mesh = o3d.geometry.TriangleMesh()
+            for mesh in meshes:
+                combined_mesh += mesh
+            o3d.io.write_triangle_mesh("combined_surface_3.ply", combined_mesh)
+#--------------------------------Modified Version---------------------------------------#            
+
         if plot_projection:
             mn,mx = coords.min(axis=0),coords.max(axis=0)
             cols = np.zeros([nsurface,3],dtype='int16')
@@ -804,7 +831,9 @@ class RetinaSurface():
             axs[1].set(xlabel='y')
             axs[1].set_xlim([self.eye.optic_disc_centre[1]-1000,self.eye.optic_disc_centre[1]+1000])
             
-            plt.show()            
+            #plt.show()
+            plt.savefig('retina_surface_plot_1.png', dpi=300)
+            plt.close()            
  
         return surface_coords, surface_normals, surface_faces, optic_disc_edge
         
@@ -983,14 +1012,16 @@ class RetinaSurface():
                     stitch_faces_refact = stitch_faces.copy()
                     for f in range(combined_edge_ind_lookup.shape[0]):
                         stitch_faces_refact[stitch_faces==f] = combined_edge_ind_lookup[f] #+ points.shape[0]
-
+#----------------------------------------Updated Version-------------------------------------------------#
                     if False:
                         mesh = o3d.geometry.TriangleMesh()
                         mesh.vertices = o3d.utility.Vector3dVector(points) 
                         mesh.triangles = o3d.utility.Vector3iVector(stitch_faces_refact)
-                        o3d.visualization.draw_geometries([mesh],mesh_show_back_face=True,mesh_show_wireframe=True)
-                    
+                        #o3d.visualization.draw_geometries([mesh],mesh_show_back_face=True,mesh_show_wireframe=True)
+                        o3d.io.write_triangle_mesh("combined_surface_4.ply", mesh)
+
                     faces = np.concatenate([faces,stitch_faces_refact])
+#----------------------------------------Updated Version-------------------------------------------------#
                     
             elif fill_mode=='circular':
 
@@ -1031,7 +1062,7 @@ class RetinaSurface():
             surface_coords[i] = points
             surface_normals[i] = normals
             surface_faces[i] = faces
-            
+#--------------------------------------Updated Version------------------------------------#
         if plot:
             meshes = []
             for i in range(nsurface):
@@ -1040,9 +1071,14 @@ class RetinaSurface():
                 mesh.vertex_normals = o3d.utility.Vector3dVector(surface_normals[i])
                 mesh.triangles = o3d.utility.Vector3iVector(surface_faces[i])
                 meshes.append(mesh)
-            
-            o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
-                
+            combined_mesh = o3d.geometry.TriangleMesh()
+            for mesh in meshes:
+                combined_mesh += mesh
+            o3d.io.write_triangle_mesh("combined_surface_5.ply", combined_mesh)
+            #o3d.visualization.draw_geometries(meshes,mesh_show_back_face=True,mesh_show_wireframe=True)
+
+#--------------------------------------Updated Version------------------------------------#
+             
         print('Grid fill complete')
         return surface_coords, surface_normals, surface_faces              
 
@@ -1143,6 +1179,7 @@ class RetinaSurface():
                     for f in range(combined_edge.shape[0]):
                         stitch_faces_refact[stitch_faces==f] = combined_edge_ind_lookup[f] #+ points.shape[0]
 
+#--------------------------------------------Updated Version----------------------------------------------------#                
                     if False: # plot
                         mesh = o3d.geometry.TriangleMesh()
                         mesh.vertices = o3d.utility.Vector3dVector(surface_coords[i])
@@ -1158,24 +1195,34 @@ class RetinaSurface():
                         mesh2.vertices = o3d.utility.Vector3dVector(surface_coords[i])
                         #mesh2.vertex_normals = o3d.utility.Vector3dVector(feature_normals[i])
                         mesh2.triangles = o3d.utility.Vector3iVector(stitch_faces_refact)
+
+                        # Combine meshes into a single mesh
+                        combined_mesh = o3d.geometry.TriangleMesh()
+                        for m in [mesh, mesh1, mesh2]:
+                            combined_mesh += m
                         
+                        o3d.io.write_triangle_mesh("combined_surface_6.ply", combined_mesh)
+
                         pcd = o3d.geometry.PointCloud()
                         pcd.points = o3d.utility.Vector3dVector(points)
-                        
+                        o3d.io.write_point_cloud("points_output.ply", pcd)
+
                         pcd2 = o3d.geometry.PointCloud()
                         pcd2.points = o3d.utility.Vector3dVector(bbox_points)
+                        o3d.io.write_point_cloud("bbox_output.ply", pcd2)
                         
                         pcd1 = o3d.geometry.PointCloud()
                         pcd1.points = o3d.utility.Vector3dVector(ordered_feature_edge)
+                        o3d.io.write_point_cloud("feature_edge_output.ply", pcd1)
                         
-                        o3d.visualization.draw_geometries([mesh,mesh1,mesh2,pcd1,pcd2],mesh_show_back_face=True,mesh_show_wireframe=True)
+                        #o3d.visualization.draw_geometries([mesh,mesh1,mesh2,pcd1,pcd2],mesh_show_back_face=True,mesh_show_wireframe=True)
                         breakpoint()
 
                     # Concatenate with previous faces
                     surface_faces[i] = np.concatenate([grid_faces_outside_feature,feature_faces[i]+points.shape[0],stitch_faces_refact])
             else:
                 breakpoint()   
-                
+#--------------------------------------------Updated Version----------------------------------------------------#                
         if plot:
             meshes = []
             for i in range(nsurface):
@@ -1185,9 +1232,11 @@ class RetinaSurface():
                 mesh.triangles = o3d.utility.Vector3iVector(surface_faces[i])
                 meshes.append(mesh)
             
-            o3d.visualization.draw_geometries([meshes[-1]],mesh_show_back_face=True,mesh_show_wireframe=True) 
-            
+            #o3d.visualization.draw_geometries([meshes[-1]],mesh_show_back_face=True,mesh_show_wireframe=True) 
+            o3d.io.write_triangle_mesh("combined_surface_7.ply", meshes[-1])
+
         return surface_coords, surface_normals, surface_faces  
+#--------------------------------------------Updated Version----------------------------------------------------#                
 
     def create_retina_surface(self, plot=False,nr=250,nproj=1001,n=500,rng_nsd=4,simulate_macula=True,simulate_optic_nerve=True,add_grid_fill=True,plot_file=None,add_simplex_noise=True,project=True,filename=None,domain_mode='circular',fill_mode='rectangular',regrid=True,ofile=None,domain=None,vessel_depth=5000.):
         

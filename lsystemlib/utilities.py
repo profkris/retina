@@ -320,6 +320,7 @@ def tortuous_path(p1,p2,mag=0.9,mag2=None,smooth=True,spline_smooth=0.05,ninterp
         P[-1,:] = p2
 
     if plot:        
-        plt.show()
-        
+        #plt.show()
+        plt.savefig("utilities.png", dpi=300)
+        plt.close()
     return P     

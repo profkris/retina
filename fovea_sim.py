@@ -3,6 +3,13 @@ arr = np.asarray
 from matplotlib import pyplot as plt
 from mpl_toolkits import mplot3d
 from retinasim import geometry
+import matplotlib
+matplotlib.use('Agg')  
+import sys
+import os
+
+output_dir = sys.argv[1]
+
 
 """
 Library of functions to create 3D fovea structures using a split Gaussian model
@@ -31,7 +38,9 @@ def plot_fovea(coords, show=True, ax=None, normals=None):
     ax.set_zlim3d(mn, mx)
     
     if show:
-        plt.show()
+        plt.savefig("plot_fovea.png", dpi=300)
+        plt.close()
+        #plt.show()
     return ax
     
 def ensure_face_direction(face,verts,direction=1):
@@ -375,7 +384,7 @@ def fovea_test():
     coords, faces, edge_verts, normals, mesh =   fovea_sim(nr=nr,nproj=nproj,shoulder_height=[100.,100.],fw=fw,dr=fovea_depth,flatness=flatness,boundary_height=[0.,0.],shoulder_sd=shoulder_sd,plot=False)
     #coords2, faces2 = fovea_sim_raised(nr=nr,nproj=nproj,fw=fw,dr=fovea_depth*0.1,flatness=flatness,boundary_height=[-1.5*fovea_depth,-1.5*fovea_depth],plot=False)
     #coords3, faces3 = fovea_sim_raised(nr=nr,nproj=nproj,fw=fw,dr=fovea_depth,flatness=flatness,boundary_height=[-3*fovea_depth,-3*fovea_depth],plot=False)
-    
+    #-----------------------Updated Visualization Part---------------------------------#   
     if True:
         import open3d as o3d
         mesh = o3d.geometry.TriangleMesh() #.create_from_point_cloud_ball_pivoting(pcd, o3d.utility.DoubleVector(radii))
@@ -384,16 +393,19 @@ def fovea_test():
         mesh.vertices = o3d.utility.Vector3dVector(coords)
         mesh.vertex_normals = o3d.utility.Vector3dVector(normals)
         mesh.triangles = o3d.utility.Vector3iVector(faces)
-        o3d.visualization.draw_geometries([mesh],mesh_show_wireframe=True) #,mesh_show_back_face=True)
-    
+        #o3d.visualization.draw_geometries([mesh],mesh_show_wireframe=True) #,mesh_show_back_face=True)
+        o3d.io.write_triangle_mesh(os.path.join(output_dir, "fovea_output_2.ply"), mesh)
         return
-    
+        #---------------------------------------END---------------------------------------#
+
     import matplotlib.tri as mtri
     triang = mtri.Triangulation(coords[:,0], coords[:,1], triangles=faces)
     fig, ax = plt.subplots(subplot_kw =dict(projection="3d"),figsize=[12,12])
     ax.plot_trisurf(coords[:,0],coords[:,1], coords[:,2], triangles=triang.triangles)
     #ax.scatter(coords[edge_verts,0],coords[edge_verts,1],coords[edge_verts,2],c='yellow',s=0.2)
-    plt.show()
+    #plt.show()
+    plt.savefig("plot_fovea_1.png", dpi=300)
+    plt.close()
 
 def on_test():
 
@@ -491,8 +503,12 @@ def on_test():
     meshes[src_ind] = mesh
     
     # Interrogate where rays from mesh 1 intersect with mesh 2
-    o3d.visualization.draw_geometries(meshes,mesh_show_wireframe=True,mesh_show_back_face=True)
+    #--------------------------------Updated Section------------------------------#
+    o3d.io.write_triangle_mesh("mesh_display_free_output.ply", mesh)
+
+    # Optional: remove this if not debugging
     breakpoint()
+    #--------------------------------Updated Section------------------------------#
 
 def hole_test():
 
@@ -512,7 +528,9 @@ def hole_test():
     fig, ax = plt.subplots(subplot_kw =dict(projection="3d"))
     ax.plot_trisurf(coords[:,0],coords[:,1], coords[:,2], triangles=triang.triangles)
     ax.scatter(coords[edge_verts,0],coords[edge_verts,1],coords[edge_verts,2],c='yellow',s=0.2)
-    plt.show()
+    #plt.show()
+    plt.savefig("plot_fovea_3.png", dpi=300)
+    plt.close()
 
 if __name__=='__main__':
 

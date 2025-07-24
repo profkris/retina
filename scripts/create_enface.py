@@ -184,8 +184,10 @@ def create_enface(path='',opath='',ofile='',graph=None,xdim=500,ydim=500,view_si
         ind = 1
         ax = fig.add_subplot(1,nim,ind)
         ax.imshow(image,cmap='gray')
-        plt.show()
-    
+        #plt.show()
+        plt.savefig("enface.png", dpi=300)
+        plt.clode()
+
     # Save images
     im = Image.fromarray(image.astype('int8'))
     if ofile=='':

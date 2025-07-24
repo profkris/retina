@@ -146,7 +146,7 @@ def retinal_vein_occulsion(gfile=None,cco_path='',output_dir=None,geometry_file=
     print(f'Written {ofile}')
 
 if __name__=='__main__':
-    path = '/PATH/TO/SIMULAITON/DATA'
+    path = '/home/vamshis/RETINA_OUT/'
     gfile = join(path,'cco','retina_cco_a2v_reanimate.am')
     geometry_file = join(path,'lsystem','retina_geometry.p')
     

@@ -71,7 +71,9 @@ def boid_seed_generator(path,plot_data=False,domain=arr([[-1200,1200],[-1200,120
         ax.set_aspect('equal', 'box')
 
         if show:
-            plt.show()
+            #plt.show()
+            plt.savefig("endpoint_seed.png", dpi=300)
+            plt.close()
         elif filename is not None:
             plt.savefig(filename)
             

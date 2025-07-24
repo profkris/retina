@@ -1,0 +1,1280 @@
+==========================================
+SLURM_CLUSTER_NAME = paramprabha
+SLURM_JOB_ACCOUNT = cdac
+SLURM_JOB_ID = 179887
+SLURM_JOB_NAME = RETINASIM-HPC
+SLURM_JOB_NODELIST = rpcn[200-209]
+SLURM_JOB_USER = vamshis
+SLURM_JOB_UID = 52008
+SLURM_JOB_PARTITION = standard
+SLURM_TASK_PID = 728795
+SLURM_SUBMIT_DIR = /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim
+SLURM_CPUS_ON_NODE = 1
+SLURM_NTASKS = 10
+SLURM_TASK_PID = 728795
+==========================================
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_00680428/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1087 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32101 
+No. of nodes = 23678 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24364 
+Edge lengths = 257.687 ± 187.047 um
+Edge diameters = 6.819 ± 9.213 um
+Length / diameter ratio = 368.720 ± 623.911 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.059809 ± 13.740962 mmHg
+Arteriole pressure = 51.999984 ± 0.000009 mmHg
+Capillary pressure = 35.999997 ± 0.000006 mmHg
+Venule pressure = 20.000012 ± 0.000007 mmHg
+Blood flow = 0.000008 ± 0.000053 nl/min
+Arteriole flow = 0.000011 ± 0.000059 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000011 ± 0.000063 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000171 ± 0.000152 mm/s
+Venule velocity = 0.000001 ± 0.000001 mm/s
+Vessel Wall Shear Stress = 3.209729 ± 7.735181 dyn/cm2
+Arteriole WSS = 0.000076 ± 0.000237 dyn/cm2
+Capillary WSS = 12.229550 ± 10.847827 dyn/cm2
+Venule WSS = 0.000054 ± 0.000126 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 21667008.880060 ± 46656537.482524 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_07841212/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1136 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32124 
+No. of nodes = 23757 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24187 
+Edge lengths = 259.666 ± 188.749 um
+Edge diameters = 8.565 ± 11.898 um
+Length / diameter ratio = 362.714 ± 622.497 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.193746 ± 13.757713 mmHg
+Arteriole pressure = 51.999992 ± 0.000005 mmHg
+Capillary pressure = 35.999996 ± 0.000003 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000044 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000170 ± 0.000154 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.151081 ± 7.722359 dyn/cm2
+Arteriole WSS = 0.000044 ± 0.000129 dyn/cm2
+Capillary WSS = 12.095180 ± 10.987833 dyn/cm2
+Venule WSS = 0.000019 ± 0.000037 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 35051440.626080 ± 77326760.401243 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_00273741/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1102 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32190 
+No. of nodes = 23845 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24152 
+Edge lengths = 259.378 ± 188.066 um
+Edge diameters = 8.032 ± 10.993 um
+Length / diameter ratio = 362.497 ± 621.926 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.159551 ± 13.769474 mmHg
+Arteriole pressure = 51.999991 ± 0.000005 mmHg
+Capillary pressure = 35.999997 ± 0.000003 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000070 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000011 ± 0.000063 nl/min
+Blood velocity = 0.000045 ± 0.000109 mm/s
+Arteriole velocity = 0.000001 ± 0.000000 mm/s
+Capillary velocity = 0.000172 ± 0.000155 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.179871 ± 7.788698 dyn/cm2
+Arteriole WSS = 0.000043 ± 0.000097 dyn/cm2
+Capillary WSS = 12.262992 ± 11.071134 dyn/cm2
+Venule WSS = 0.000028 ± 0.000058 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 30077090.180163 ± 63952433.104350 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_04998428/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1116 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32490 
+No. of nodes = 24031 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24468 
+Edge lengths = 256.594 ± 184.306 um
+Edge diameters = 8.592 ± 11.780 um
+Length / diameter ratio = 361.261 ± 621.926 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.182701 ± 13.758821 mmHg
+Arteriole pressure = 51.999994 ± 0.000005 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000004 ± 0.000003 mmHg
+Blood flow = 0.000010 ± 0.000060 nl/min
+Arteriole flow = 0.000013 ± 0.000070 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000046 ± 0.000127 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000174 ± 0.000200 mm/s
+Venule velocity = 0.000000 ± 0.000001 mm/s
+Vessel Wall Shear Stress = 3.242354 ± 9.089854 dyn/cm2
+Arteriole WSS = 0.000033 ± 0.000065 dyn/cm2
+Capillary WSS = 12.450464 ± 14.235470 dyn/cm2
+Venule WSS = 0.000026 ± 0.000205 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 34199116.215767 ± 74446763.722742 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_09059140/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1141 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32201 
+No. of nodes = 23811 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24230 
+Edge lengths = 258.514 ± 187.204 um
+Edge diameters = 9.534 ± 13.130 um
+Length / diameter ratio = 361.643 ± 624.197 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.168440 ± 13.757198 mmHg
+Arteriole pressure = 51.999995 ± 0.000003 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000011 ± 0.000065 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000071 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000168 ± 0.000146 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.130015 ± 7.475554 dyn/cm2
+Arteriole WSS = 0.000028 ± 0.000058 dyn/cm2
+Capillary WSS = 12.010144 ± 10.382065 dyn/cm2
+Venule WSS = 0.000013 ± 0.000026 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 43215624.943423 ± 94867918.969582 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_07947153/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1087 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32101 
+No. of nodes = 23678 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24364 
+Edge lengths = 257.687 ± 187.047 um
+Edge diameters = 6.819 ± 9.213 um
+Length / diameter ratio = 368.720 ± 623.911 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.059809 ± 13.740962 mmHg
+Arteriole pressure = 51.999984 ± 0.000009 mmHg
+Capillary pressure = 35.999997 ± 0.000006 mmHg
+Venule pressure = 20.000012 ± 0.000007 mmHg
+Blood flow = 0.000008 ± 0.000053 nl/min
+Arteriole flow = 0.000011 ± 0.000059 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000011 ± 0.000063 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000171 ± 0.000152 mm/s
+Venule velocity = 0.000001 ± 0.000001 mm/s
+Vessel Wall Shear Stress = 3.209729 ± 7.735181 dyn/cm2
+Arteriole WSS = 0.000076 ± 0.000237 dyn/cm2
+Capillary WSS = 12.229550 ± 10.847827 dyn/cm2
+Venule WSS = 0.000054 ± 0.000126 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 21667007.525642 ± 46656534.681495 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_07001171/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1102 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32190 
+No. of nodes = 23845 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24152 
+Edge lengths = 259.378 ± 188.066 um
+Edge diameters = 8.032 ± 10.993 um
+Length / diameter ratio = 362.497 ± 621.926 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.159551 ± 13.769474 mmHg
+Arteriole pressure = 51.999991 ± 0.000005 mmHg
+Capillary pressure = 35.999997 ± 0.000003 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000070 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000011 ± 0.000063 nl/min
+Blood velocity = 0.000045 ± 0.000109 mm/s
+Arteriole velocity = 0.000001 ± 0.000000 mm/s
+Capillary velocity = 0.000172 ± 0.000155 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.179871 ± 7.788698 dyn/cm2
+Arteriole WSS = 0.000043 ± 0.000097 dyn/cm2
+Capillary WSS = 12.262992 ± 11.071134 dyn/cm2
+Venule WSS = 0.000028 ± 0.000058 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 30077088.449059 ± 63952428.636046 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03080641/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1136 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32124 
+No. of nodes = 23757 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24187 
+Edge lengths = 259.666 ± 188.749 um
+Edge diameters = 8.565 ± 11.898 um
+Length / diameter ratio = 362.714 ± 622.497 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.193746 ± 13.757713 mmHg
+Arteriole pressure = 51.999992 ± 0.000005 mmHg
+Capillary pressure = 35.999996 ± 0.000003 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000044 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000170 ± 0.000154 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.151081 ± 7.722359 dyn/cm2
+Arteriole WSS = 0.000044 ± 0.000129 dyn/cm2
+Capillary WSS = 12.095180 ± 10.987833 dyn/cm2
+Venule WSS = 0.000019 ± 0.000037 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 35051438.235726 ± 77326754.863700 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_07362454/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1116 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32490 
+No. of nodes = 24031 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24468 
+Edge lengths = 256.594 ± 184.306 um
+Edge diameters = 8.592 ± 11.780 um
+Length / diameter ratio = 361.261 ± 621.926 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.182701 ± 13.758821 mmHg
+Arteriole pressure = 51.999994 ± 0.000005 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000004 ± 0.000003 mmHg
+Blood flow = 0.000010 ± 0.000060 nl/min
+Arteriole flow = 0.000013 ± 0.000070 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000046 ± 0.000127 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000174 ± 0.000200 mm/s
+Venule velocity = 0.000000 ± 0.000001 mm/s
+Vessel Wall Shear Stress = 3.242354 ± 9.089854 dyn/cm2
+Arteriole WSS = 0.000033 ± 0.000065 dyn/cm2
+Capillary WSS = 12.450465 ± 14.235470 dyn/cm2
+Venule WSS = 0.000026 ± 0.000205 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 34199113.881472 ± 74446759.184747 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03480851/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1141 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32201 
+No. of nodes = 23811 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24230 
+Edge lengths = 258.514 ± 187.204 um
+Edge diameters = 9.534 ± 13.130 um
+Length / diameter ratio = 361.643 ± 624.197 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.168440 ± 13.757198 mmHg
+Arteriole pressure = 51.999995 ± 0.000003 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000011 ± 0.000065 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000071 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000168 ± 0.000146 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.130015 ± 7.475554 dyn/cm2
+Arteriole WSS = 0.000028 ± 0.000058 dyn/cm2
+Capillary WSS = 12.010144 ± 10.382065 dyn/cm2
+Venule WSS = 0.000013 ± 0.000026 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 43215621.935012 ± 94867913.478893 s
+[Rank 3] Running simulation 3 as /scratch/vamshis/FINAL/TEST_4/sim00000003
+First branch length 1100.3126020025538
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/retina_artery_upper.am
+First branch length 1100.3126020025538
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/retina_vein_upper.am
+First branch length 1100.3126020025538
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/retina_artery_lower.am
+First branch length 1100.3126020025538
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/retina_vein_lower.am
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/retina_lsystem.am
+[INFO] Attempting headless mesh export instead of screen grab...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000003/lsystem/lsystem_output_mesh.ply
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_upper_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_upper_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_artery_upper.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_vein_upper.csv
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_lower_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_lower_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_artery_lower.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_vein_lower.csv
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_cco.am
+Joining feeding vessels...
+[INFO] Exporting headless mesh instead of screen rendering...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/vascular_output_mesh.ply
+Connecting endpoints...
+Directly connecting arterial terminal nodes to venous terminal nodes
+Connecting arterial endpoints to venous endpoints
+Connecting venous endpoints to arterial endpoints
+Shortest vessel length: 0.3384395241737366
+Writing dat file... /home/vamshis/temp/reanimate_temp_00680428/reanimate.dat
+Max diameter = 173.82424926757812, idx = 23673
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate.am
+Max. flow = 0.002722
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Max. flow = 0.002722
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Interpolating graph (10.0 um)
+Overlaying wriggle (by branch). afH=None,afL=None,pfH=None,pfL=None
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Writing dat file... /home/vamshis/temp/reanimate_temp_07947153/reanimate.dat
+Max diameter = 173.82424926757812, idx = 23673
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate_crawl.am
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Saved enface segmentation to to enface_segmentation.png
+Simulating macular geometry...
+Simulating optic nerve geometry...
+Creating grid fill
+Grid fill complete
+Stitching macula model into grid...
+Stitching optic nerve model into grid...
+Adding simplex noise
+Adding independent layer noise
+Adding common layer noise
+Projecting onto sphere
+Projecting vertices onto sphere...
+Projecting edgepoints onto sphere...
+Ray tracing for surface embedding...
+Writing graph to /scratch/vamshis/FINAL/TEST_4/sim00000003/cco/retina_cco_a2v_reanimate_crawl_projected.am
+Writing vessel mesh...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Max. flow = 0.002722
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Creating artery-vein graph
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+Creating perfused graph
+screen_grab skipped: Headless mode active.
+Creating order graph
+screen_grab skipped: Headless mode active.
+Creating branch graph
+screen_grab skipped: Headless mode active.
+Storing injection result...
+ Saved 15000 frames to /scratch/vamshis/FINAL/TEST_4/sim00000003/ffa/concentration_data.npz
+[Rank 4] Running simulation 4 as /scratch/vamshis/FINAL/TEST_4/sim00000004
+First branch length 2459.83099830049
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/retina_artery_upper.am
+First branch length 2459.83099830049
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/retina_vein_upper.am
+First branch length 2459.83099830049
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/retina_artery_lower.am
+First branch length 2459.83099830049
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/retina_vein_lower.am
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/retina_lsystem.am
+[INFO] Attempting headless mesh export instead of screen grab...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000004/lsystem/lsystem_output_mesh.ply
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_upper_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_upper_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_artery_upper.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_vein_upper.csv
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_lower_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_lower_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_artery_lower.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_vein_lower.csv
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_cco.am
+Joining feeding vessels...
+[INFO] Exporting headless mesh instead of screen rendering...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/vascular_output_mesh.ply
+Connecting endpoints...
+Directly connecting arterial terminal nodes to venous terminal nodes
+Connecting arterial endpoints to venous endpoints
+Connecting venous endpoints to arterial endpoints
+Shortest vessel length: 0.05532035231590271
+Writing dat file... /home/vamshis/temp/reanimate_temp_00273741/reanimate.dat
+Max diameter = 209.22605895996094, idx = 23840
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate.am
+Max. flow = 0.002704
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Max. flow = 0.002704
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Interpolating graph (10.0 um)
+Overlaying wriggle (by branch). afH=None,afL=None,pfH=None,pfL=None
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Writing dat file... /home/vamshis/temp/reanimate_temp_07001171/reanimate.dat
+Max diameter = 209.22605895996094, idx = 23840
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate_crawl.am
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Saved enface segmentation to to enface_segmentation.png
+Simulating macular geometry...
+Simulating optic nerve geometry...
+Creating grid fill
+Grid fill complete
+Stitching macula model into grid...
+Stitching optic nerve model into grid...
+Adding simplex noise
+Adding independent layer noise
+Adding common layer noise
+Projecting onto sphere
+Projecting vertices onto sphere...
+Projecting edgepoints onto sphere...
+Ray tracing for surface embedding...
+Writing graph to /scratch/vamshis/FINAL/TEST_4/sim00000004/cco/retina_cco_a2v_reanimate_crawl_projected.am
+Writing vessel mesh...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Max. flow = 0.002704
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Creating artery-vein graph
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+Creating perfused graph
+screen_grab skipped: Headless mode active.
+Creating order graph
+screen_grab skipped: Headless mode active.
+Creating branch graph
+screen_grab skipped: Headless mode active.
+Storing injection result...
+ Saved 15000 frames to /scratch/vamshis/FINAL/TEST_4/sim00000004/ffa/concentration_data.npz
+[Rank 0] Running simulation 0 as /scratch/vamshis/FINAL/TEST_4/sim00000000
+First branch length 1492.0810002763117
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/retina_artery_upper.am
+First branch length 1492.0810002763117
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/retina_vein_upper.am
+First branch length 1492.0810002763117
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/retina_artery_lower.am
+First branch length 1492.0810002763117
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/retina_vein_lower.am
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/retina_lsystem.am
+[INFO] Attempting headless mesh export instead of screen grab...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000000/lsystem/lsystem_output_mesh.ply
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_upper_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_upper_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_artery_upper.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_vein_upper.csv
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_lower_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_lower_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_artery_lower.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_vein_lower.csv
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_cco.am
+Joining feeding vessels...
+[INFO] Exporting headless mesh instead of screen rendering...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/vascular_output_mesh.ply
+Connecting endpoints...
+Directly connecting arterial terminal nodes to venous terminal nodes
+Connecting arterial endpoints to venous endpoints
+Connecting venous endpoints to arterial endpoints
+Shortest vessel length: 0.03861876577138901
+Writing dat file... /home/vamshis/temp/reanimate_temp_07841212/reanimate.dat
+Max diameter = 233.89324951171875, idx = 23752
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate.am
+Max. flow = 0.002674
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Max. flow = 0.002674
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Interpolating graph (10.0 um)
+Overlaying wriggle (by branch). afH=None,afL=None,pfH=None,pfL=None
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Writing dat file... /home/vamshis/temp/reanimate_temp_03080641/reanimate.dat
+Max diameter = 233.89324951171875, idx = 23752
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate_crawl.am
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Saved enface segmentation to to enface_segmentation.png
+Simulating macular geometry...
+Simulating optic nerve geometry...
+Creating grid fill
+Grid fill complete
+Stitching macula model into grid...
+Stitching optic nerve model into grid...
+Adding simplex noise
+Adding independent layer noise
+Adding common layer noise
+Projecting onto sphere
+Projecting vertices onto sphere...
+Projecting edgepoints onto sphere...
+Ray tracing for surface embedding...
+Writing graph to /scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_cco_a2v_reanimate_crawl_projected.am
+Writing vessel mesh...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Max. flow = 0.002674
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Creating artery-vein graph
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+Creating perfused graph
+screen_grab skipped: Headless mode active.
+Creating order graph
+screen_grab skipped: Headless mode active.
+Creating branch graph
+screen_grab skipped: Headless mode active.
+Storing injection result...
+ Saved 15000 frames to /scratch/vamshis/FINAL/TEST_4/sim00000000/ffa/concentration_data.npz
+[Rank 2] Running simulation 2 as /scratch/vamshis/FINAL/TEST_4/sim00000002
+First branch length 1570.0021674610248
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/retina_artery_upper.am
+First branch length 1570.0021674610248
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/retina_vein_upper.am
+First branch length 1570.0021674610248
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/retina_artery_lower.am
+First branch length 1570.0021674610248
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/retina_vein_lower.am
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/retina_lsystem.am
+[INFO] Attempting headless mesh export instead of screen grab...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000002/lsystem/lsystem_output_mesh.ply
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_upper_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_upper_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_artery_upper.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_vein_upper.csv
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_lower_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_lower_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_artery_lower.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_vein_lower.csv
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_cco.am
+Joining feeding vessels...
+[INFO] Exporting headless mesh instead of screen rendering...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/vascular_output_mesh.ply
+Connecting endpoints...
+Directly connecting arterial terminal nodes to venous terminal nodes
+Connecting arterial endpoints to venous endpoints
+Connecting venous endpoints to arterial endpoints
+Shortest vessel length: 0.204549640417099
+Writing dat file... /home/vamshis/temp/reanimate_temp_04998428/reanimate.dat
+Max diameter = 222.3131561279297, idx = 24026
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate.am
+Max. flow = 0.002783
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Max. flow = 0.002783
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Interpolating graph (10.0 um)
+Overlaying wriggle (by branch). afH=None,afL=None,pfH=None,pfL=None
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Writing dat file... /home/vamshis/temp/reanimate_temp_07362454/reanimate.dat
+Max diameter = 222.3131561279297, idx = 24026
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate_crawl.am
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Saved enface segmentation to to enface_segmentation.png
+Simulating macular geometry...
+Simulating optic nerve geometry...
+Creating grid fill
+Grid fill complete
+Stitching macula model into grid...
+Stitching optic nerve model into grid...
+Adding simplex noise
+Adding independent layer noise
+Adding common layer noise
+Projecting onto sphere
+Projecting vertices onto sphere...
+Projecting edgepoints onto sphere...
+Ray tracing for surface embedding...
+Writing graph to /scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_cco_a2v_reanimate_crawl_projected.am
+Writing vessel mesh...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Max. flow = 0.002783
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Creating artery-vein graph
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+Creating perfused graph
+screen_grab skipped: Headless mode active.
+Creating order graph
+screen_grab skipped: Headless mode active.
+Creating branch graph
+screen_grab skipped: Headless mode active.
+Storing injection result...
+ Saved 15000 frames to /scratch/vamshis/FINAL/TEST_4/sim00000002/ffa/concentration_data.npz
+[Rank 1] Running simulation 1 as /scratch/vamshis/FINAL/TEST_4/sim00000001
+First branch length 2185.979776422327
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/retina_artery_upper.am
+First branch length 2185.979776422327
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/retina_vein_upper.am
+First branch length 2185.979776422327
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/retina_artery_lower.am
+First branch length 2185.979776422327
+Graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/retina_vein_lower.am
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/retina_lsystem.am
+[INFO] Attempting headless mesh export instead of screen grab...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000001/lsystem/lsystem_output_mesh.ply
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_upper_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_upper_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_artery_upper.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_vein_upper.csv
+Written param file: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_lower_discs_params.json
+Simulating from /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_lower_discs_params.json
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_artery_lower.csv
+Converting CSV to AM: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_vein_lower.csv
+Combined graph written to /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_cco.am
+Joining feeding vessels...
+[INFO] Exporting headless mesh instead of screen rendering...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+[SUCCESS] Mesh saved to: /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/vascular_output_mesh.ply
+Connecting endpoints...
+Directly connecting arterial terminal nodes to venous terminal nodes
+Connecting arterial endpoints to venous endpoints
+Connecting venous endpoints to arterial endpoints
+Shortest vessel length: 0.19719462096691132
+Writing dat file... /home/vamshis/temp/reanimate_temp_09059140/reanimate.dat
+Max diameter = 260.6344909667969, idx = 23806
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate.am
+Max. flow = 0.002663
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Max. flow = 0.002663
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Interpolating graph (10.0 um)
+Overlaying wriggle (by branch). afH=None,afL=None,pfH=None,pfL=None
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Writing dat file... /home/vamshis/temp/reanimate_temp_03480851/reanimate.dat
+Max diameter = 260.6344909667969, idx = 23806
+Calling REANIMATE...
+REANIMATE complete
+Saving Amira graph to retina_cco_a2v_reanimate_crawl.am
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+screen_grab skipped: Headless mode active.
+Saved enface segmentation to to enface_segmentation.png
+Simulating macular geometry...
+Simulating optic nerve geometry...
+Creating grid fill
+Grid fill complete
+Stitching macula model into grid...
+Stitching optic nerve model into grid...
+Adding simplex noise
+Adding independent layer noise
+Adding common layer noise
+Projecting onto sphere
+Projecting vertices onto sphere...
+Projecting edgepoints onto sphere...
+Ray tracing for surface embedding...
+Writing graph to /scratch/vamshis/FINAL/TEST_4/sim00000001/cco/retina_cco_a2v_reanimate_crawl_projected.am
+Writing vessel mesh...
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+Max. flow = 0.002663
+Calculating lengths...
+Fetching edge radii...
+Fetching node pressure...
+Fetching vessel type...
+Creating artery-vein graph
+Preparing graph (creating cylinders)...
+Headless mode! Skipping rendering setup.
+Headless mode! Cannot render image
+screen_grab skipped: Headless mode active.
+Creating perfused graph
+screen_grab skipped: Headless mode active.
+Creating order graph
+screen_grab skipped: Headless mode active.
+Creating branch graph
+screen_grab skipped: Headless mode active.
+Storing injection result...
+ Saved 15000 frames to /scratch/vamshis/FINAL/TEST_4/sim00000001/ffa/concentration_data.npz

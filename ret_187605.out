@@ -1,0 +1,1475 @@
+==========================================
+SLURM_CLUSTER_NAME = paramprabha
+SLURM_JOB_ACCOUNT = cdac
+SLURM_JOB_ID = 187605
+SLURM_JOB_NAME = RETINASIM-HPC
+SLURM_JOB_NODELIST = rpcn[173-182]
+SLURM_JOB_USER = vamshis
+SLURM_JOB_UID = 52008
+SLURM_JOB_PARTITION = standard
+SLURM_TASK_PID = 1671714
+SLURM_SUBMIT_DIR = /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim
+SLURM_CPUS_ON_NODE = 1
+SLURM_NTASKS = 10
+SLURM_TASK_PID = 1671714
+==========================================
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03578881/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1108 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32156 
+No. of nodes = 23738 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24330 
+Edge lengths = 257.246 ± 182.705 um
+Edge diameters = 8.503 ± 11.822 um
+Length / diameter ratio = 361.433 ± 621.191 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.159223 ± 13.745806 mmHg
+Arteriole pressure = 51.999994 ± 0.000004 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000151 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.189045 ± 7.683059 dyn/cm2
+Arteriole WSS = 0.000033 ± 0.000077 dyn/cm2
+Capillary WSS = 12.178887 ± 10.768202 dyn/cm2
+Venule WSS = 0.000027 ± 0.000070 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 32803675.490310 ± 68776071.587351 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_01516429/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1113 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32385 
+No. of nodes = 23990 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24280 
+Edge lengths = 259.429 ± 187.211 um
+Edge diameters = 9.079 ± 12.409 um
+Length / diameter ratio = 365.294 ± 634.757 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.177859 ± 13.769413 mmHg
+Arteriole pressure = 51.999995 ± 0.000003 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000012 ± 0.000066 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000065 nl/min
+Blood velocity = 0.000045 ± 0.000111 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000162 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.165443 ± 7.944065 dyn/cm2
+Arteriole WSS = 0.000028 ± 0.000058 dyn/cm2
+Capillary WSS = 12.208206 ± 11.532738 dyn/cm2
+Venule WSS = 0.000019 ± 0.000044 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 38599068.943564 ± 81906051.923333 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_06963515/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1126 um
+nsol = 4
+nnodbc = 2
+No. of segments = 31989 
+No. of nodes = 23599 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24257 
+Edge lengths = 257.300 ± 183.318 um
+Edge diameters = 8.797 ± 12.451 um
+Length / diameter ratio = 358.467 ± 610.884 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.163554 ± 13.741177 mmHg
+Arteriole pressure = 51.999993 ± 0.000004 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000062 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000077 nl/min
+Blood velocity = 0.000046 ± 0.000111 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000173 ± 0.000158 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.231130 ± 7.909058 dyn/cm2
+Arteriole WSS = 0.000034 ± 0.000068 dyn/cm2
+Capillary WSS = 12.316490 ± 11.249498 dyn/cm2
+Venule WSS = 0.000020 ± 0.000043 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 35271385.683214 ± 73823738.526515 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_00281857/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1131 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32373 
+No. of nodes = 23951 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24361 
+Edge lengths = 257.378 ± 185.917 um
+Edge diameters = 9.253 ± 12.625 um
+Length / diameter ratio = 358.541 ± 620.846 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.073643 ± 13.761716 mmHg
+Arteriole pressure = 51.999997 ± 0.000001 mmHg
+Capillary pressure = 36.000002 ± 0.000001 mmHg
+Venule pressure = 20.000005 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000011 ± 0.000063 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000069 nl/min
+Blood velocity = 0.000045 ± 0.000107 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000149 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.179173 ± 7.627723 dyn/cm2
+Arteriole WSS = 0.000017 ± 0.000034 dyn/cm2
+Capillary WSS = 12.217339 ± 10.638394 dyn/cm2
+Venule WSS = 0.000025 ± 0.000047 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 39260679.843999 ± 75924531.188423 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_00968700/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1147 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32076 
+No. of nodes = 23766 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24051 
+Edge lengths = 260.115 ± 189.196 um
+Edge diameters = 8.813 ± 12.670 um
+Length / diameter ratio = 364.817 ± 635.579 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.255385 ± 13.769605 mmHg
+Arteriole pressure = 51.999984 ± 0.000009 mmHg
+Capillary pressure = 35.999988 ± 0.000007 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000008 ± 0.000055 nl/min
+Arteriole flow = 0.000011 ± 0.000063 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000064 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000169 ± 0.000145 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.125613 ± 7.467399 dyn/cm2
+Arteriole WSS = 0.000076 ± 0.000221 dyn/cm2
+Capillary WSS = 12.061611 ± 10.363869 dyn/cm2
+Venule WSS = 0.000011 ± 0.000021 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 40184151.359625 ± 103062582.813720 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_05597090/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1145 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32192 
+No. of nodes = 23825 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24170 
+Edge lengths = 260.399 ± 187.269 um
+Edge diameters = 9.898 ± 13.980 um
+Length / diameter ratio = 363.220 ± 638.276 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.106858 ± 13.763783 mmHg
+Arteriole pressure = 51.999997 ± 0.000002 mmHg
+Capillary pressure = 35.999999 ± 0.000001 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000010 ± 0.000063 nl/min
+Arteriole flow = 0.000013 ± 0.000077 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000068 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000168 ± 0.000146 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.111530 ± 7.465811 dyn/cm2
+Arteriole WSS = 0.000020 ± 0.000046 dyn/cm2
+Capillary WSS = 11.968687 ± 10.411518 dyn/cm2
+Venule WSS = 0.000015 ± 0.000035 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 44342401.734996 ± 89679318.312230 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_04440390/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1113 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32162 
+No. of nodes = 23793 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24176 
+Edge lengths = 260.360 ± 188.513 um
+Edge diameters = 9.480 ± 13.070 um
+Length / diameter ratio = 364.532 ± 639.346 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.154716 ± 13.760494 mmHg
+Arteriole pressure = 51.999996 ± 0.000002 mmHg
+Capillary pressure = 36.000000 ± 0.000001 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000065 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000170 ± 0.000154 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.160827 ± 7.738989 dyn/cm2
+Arteriole WSS = 0.000021 ± 0.000051 dyn/cm2
+Capillary WSS = 12.144072 ± 11.001072 dyn/cm2
+Venule WSS = 0.000019 ± 0.000039 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 41305814.181657 ± 84182671.890088 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_04487130/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1114 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32004 
+No. of nodes = 23610 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24282 
+Edge lengths = 259.005 ± 185.876 um
+Edge diameters = 8.036 ± 11.084 um
+Length / diameter ratio = 364.630 ± 625.356 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.066991 ± 13.741966 mmHg
+Arteriole pressure = 51.999993 ± 0.000004 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000007 ± 0.000004 mmHg
+Blood flow = 0.000009 ± 0.000056 nl/min
+Arteriole flow = 0.000012 ± 0.000066 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000064 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000000 mm/s
+Capillary velocity = 0.000170 ± 0.000152 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.176527 ± 7.692366 dyn/cm2
+Arteriole WSS = 0.000039 ± 0.000100 dyn/cm2
+Capillary WSS = 12.108232 ± 10.835806 dyn/cm2
+Venule WSS = 0.000033 ± 0.000072 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 29464729.551855 ± 61277836.114825 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03622089/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1109 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32240 
+No. of nodes = 23800 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24425 
+Edge lengths = 259.482 ± 187.674 um
+Edge diameters = 7.942 ± 10.873 um
+Length / diameter ratio = 372.056 ± 645.255 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.148880 ± 13.745918 mmHg
+Arteriole pressure = 51.999990 ± 0.000006 mmHg
+Capillary pressure = 35.999995 ± 0.000004 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000068 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000066 nl/min
+Blood velocity = 0.000045 ± 0.000109 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000170 ± 0.000157 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.168136 ± 7.821673 dyn/cm2
+Arteriole WSS = 0.000052 ± 0.000127 dyn/cm2
+Capillary WSS = 12.099001 ± 11.206891 dyn/cm2
+Venule WSS = 0.000026 ± 0.000061 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 30009516.816904 ± 62979299.905961 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_06228531/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1123 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32417 
+No. of nodes = 24024 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24276 
+Edge lengths = 257.715 ± 183.984 um
+Edge diameters = 8.741 ± 12.059 um
+Length / diameter ratio = 359.860 ± 625.499 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.088842 ± 13.773226 mmHg
+Arteriole pressure = 51.999994 ± 0.000003 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000004 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000065 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000045 ± 0.000115 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000174 ± 0.000169 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.223237 ± 8.205472 dyn/cm2
+Arteriole WSS = 0.000030 ± 0.000063 dyn/cm2
+Capillary WSS = 12.446340 ± 12.050195 dyn/cm2
+Venule WSS = 0.000024 ± 0.000055 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 33348745.962911 ± 65229405.561143 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_08139677/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1108 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32156 
+No. of nodes = 23738 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24330 
+Edge lengths = 257.246 ± 182.705 um
+Edge diameters = 8.503 ± 11.822 um
+Length / diameter ratio = 361.433 ± 621.191 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.159223 ± 13.745806 mmHg
+Arteriole pressure = 51.999994 ± 0.000004 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000059 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000151 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.189045 ± 7.683059 dyn/cm2
+Arteriole WSS = 0.000033 ± 0.000077 dyn/cm2
+Capillary WSS = 12.178887 ± 10.768202 dyn/cm2
+Venule WSS = 0.000027 ± 0.000070 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 32803673.237336 ± 68776067.091551 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_01241401/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1113 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32385 
+No. of nodes = 23990 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24280 
+Edge lengths = 259.429 ± 187.211 um
+Edge diameters = 9.079 ± 12.409 um
+Length / diameter ratio = 365.294 ± 634.757 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.177859 ± 13.769413 mmHg
+Arteriole pressure = 51.999995 ± 0.000003 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000012 ± 0.000066 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000065 nl/min
+Blood velocity = 0.000045 ± 0.000111 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000162 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.165443 ± 7.944065 dyn/cm2
+Arteriole WSS = 0.000028 ± 0.000058 dyn/cm2
+Capillary WSS = 12.208206 ± 11.532738 dyn/cm2
+Venule WSS = 0.000019 ± 0.000044 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 38599066.680373 ± 81906047.067125 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03360037/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1126 um
+nsol = 4
+nnodbc = 2
+No. of segments = 31989 
+No. of nodes = 23599 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24257 
+Edge lengths = 257.300 ± 183.318 um
+Edge diameters = 8.797 ± 12.451 um
+Length / diameter ratio = 358.467 ± 610.884 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.163554 ± 13.741177 mmHg
+Arteriole pressure = 51.999993 ± 0.000004 mmHg
+Capillary pressure = 35.999998 ± 0.000002 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000062 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000077 nl/min
+Blood velocity = 0.000046 ± 0.000111 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000173 ± 0.000158 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.231130 ± 7.909058 dyn/cm2
+Arteriole WSS = 0.000034 ± 0.000068 dyn/cm2
+Capillary WSS = 12.316490 ± 11.249499 dyn/cm2
+Venule WSS = 0.000020 ± 0.000043 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 35271384.002163 ± 73823732.851758 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_03413141/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1147 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32076 
+No. of nodes = 23766 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24051 
+Edge lengths = 260.115 ± 189.196 um
+Edge diameters = 8.813 ± 12.670 um
+Length / diameter ratio = 364.817 ± 635.579 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.255385 ± 13.769605 mmHg
+Arteriole pressure = 51.999984 ± 0.000009 mmHg
+Capillary pressure = 35.999988 ± 0.000007 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000008 ± 0.000055 nl/min
+Arteriole flow = 0.000011 ± 0.000063 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000064 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000169 ± 0.000145 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.125613 ± 7.467399 dyn/cm2
+Arteriole WSS = 0.000076 ± 0.000221 dyn/cm2
+Capillary WSS = 12.061611 ± 10.363869 dyn/cm2
+Venule WSS = 0.000011 ± 0.000021 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 40184149.060607 ± 103062576.710052 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_01941649/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1131 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32373 
+No. of nodes = 23951 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24361 
+Edge lengths = 257.378 ± 185.917 um
+Edge diameters = 9.253 ± 12.625 um
+Length / diameter ratio = 358.541 ± 620.846 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.073643 ± 13.761716 mmHg
+Arteriole pressure = 51.999997 ± 0.000001 mmHg
+Capillary pressure = 36.000002 ± 0.000001 mmHg
+Venule pressure = 20.000005 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000011 ± 0.000063 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000069 nl/min
+Blood velocity = 0.000045 ± 0.000107 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000171 ± 0.000149 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.179173 ± 7.627723 dyn/cm2
+Arteriole WSS = 0.000017 ± 0.000034 dyn/cm2
+Capillary WSS = 12.217339 ± 10.638394 dyn/cm2
+Venule WSS = 0.000025 ± 0.000047 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 39260677.032950 ± 75924526.823070 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_02847510/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1145 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32192 
+No. of nodes = 23825 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24170 
+Edge lengths = 260.399 ± 187.269 um
+Edge diameters = 9.898 ± 13.980 um
+Length / diameter ratio = 363.220 ± 638.276 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.106858 ± 13.763783 mmHg
+Arteriole pressure = 51.999997 ± 0.000002 mmHg
+Capillary pressure = 35.999999 ± 0.000001 mmHg
+Venule pressure = 20.000002 ± 0.000001 mmHg
+Blood flow = 0.000010 ± 0.000063 nl/min
+Arteriole flow = 0.000013 ± 0.000077 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000068 nl/min
+Blood velocity = 0.000044 ± 0.000105 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000168 ± 0.000146 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.111530 ± 7.465812 dyn/cm2
+Arteriole WSS = 0.000020 ± 0.000046 dyn/cm2
+Capillary WSS = 11.968687 ± 10.411518 dyn/cm2
+Venule WSS = 0.000015 ± 0.000035 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 44342398.797235 ± 89679312.570066 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_09309358/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1113 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32162 
+No. of nodes = 23793 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24176 
+Edge lengths = 260.360 ± 188.513 um
+Edge diameters = 9.480 ± 13.070 um
+Length / diameter ratio = 364.532 ± 639.346 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.154716 ± 13.760494 mmHg
+Arteriole pressure = 51.999996 ± 0.000002 mmHg
+Capillary pressure = 36.000000 ± 0.000001 mmHg
+Venule pressure = 20.000003 ± 0.000002 mmHg
+Blood flow = 0.000009 ± 0.000057 nl/min
+Arteriole flow = 0.000012 ± 0.000067 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000065 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000170 ± 0.000154 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.160827 ± 7.738989 dyn/cm2
+Arteriole WSS = 0.000021 ± 0.000051 dyn/cm2
+Capillary WSS = 12.144072 ± 11.001072 dyn/cm2
+Venule WSS = 0.000019 ± 0.000039 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 41305813.873165 ± 84182668.723458 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_00324532/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1109 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32240 
+No. of nodes = 23800 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24425 
+Edge lengths = 259.482 ± 187.674 um
+Edge diameters = 7.942 ± 10.873 um
+Length / diameter ratio = 372.056 ± 645.255 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.148880 ± 13.745918 mmHg
+Arteriole pressure = 51.999990 ± 0.000006 mmHg
+Capillary pressure = 35.999995 ± 0.000004 mmHg
+Venule pressure = 20.000005 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000068 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000066 nl/min
+Blood velocity = 0.000045 ± 0.000109 mm/s
+Arteriole velocity = 0.000001 ± 0.000001 mm/s
+Capillary velocity = 0.000170 ± 0.000157 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.168136 ± 7.821673 dyn/cm2
+Arteriole WSS = 0.000052 ± 0.000127 dyn/cm2
+Capillary WSS = 12.099001 ± 11.206891 dyn/cm2
+Venule WSS = 0.000026 ± 0.000061 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 30009514.969342 ± 62979295.640875 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_05233482/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1114 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32004 
+No. of nodes = 23610 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24282 
+Edge lengths = 259.005 ± 185.876 um
+Edge diameters = 8.036 ± 11.084 um
+Length / diameter ratio = 364.630 ± 625.356 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.066991 ± 13.741966 mmHg
+Arteriole pressure = 51.999993 ± 0.000004 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000007 ± 0.000004 mmHg
+Blood flow = 0.000009 ± 0.000056 nl/min
+Arteriole flow = 0.000012 ± 0.000066 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000012 ± 0.000064 nl/min
+Blood velocity = 0.000045 ± 0.000108 mm/s
+Arteriole velocity = 0.000001 ± 0.000000 mm/s
+Capillary velocity = 0.000170 ± 0.000152 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.176527 ± 7.692366 dyn/cm2
+Arteriole WSS = 0.000039 ± 0.000100 dyn/cm2
+Capillary WSS = 12.108232 ± 10.835806 dyn/cm2
+Venule WSS = 0.000033 ± 0.000072 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 29464727.501947 ± 61277831.955725 s
+Setting build directory ...
+Setting build directory ...
+Directory does not exist. Creating folder ...
+> Loading network...
+Reading /home/vamshis/temp/reanimate_temp_01856294/reanimate.dat ...
+
+
+---------------------------------------------
+anon network derived from Amira Spatial Graph
+---------------------------------------------
+
+Importing network data ...
+Tissue Dimensions (x,y,z) = 34810 um x 34738 um x 1123 um
+nsol = 4
+nnodbc = 2
+No. of segments = 32417 
+No. of nodes = 24024 
+No. of boundary nodes = 2 
+
+Analysing network edges ...
+No. of edges = 24276 
+Edge lengths = 257.715 ± 183.984 um
+Edge diameters = 8.741 ± 12.059 um
+Length / diameter ratio = 359.860 ± 625.499 um
+> Setting stack size ...
+
+
+-----------------
+Blood Flow Module
+-----------------
+
+Cloning vascular network ...
+
+Finding articulation points ...
+No. of articulation points = 2 
+% of total nodes = 0.008 
+
+Finding dead ends ...
+No. of dead end segments = 0 
+% of total segments = 0 
+
+Assigning rheological parameters ...
+
+Simulating blood flow ...
+
+Full boundary conditions detected -> Running full solver ...
+Computing conductance matrix, M ...
+Computing K matrix ...
+Assigning boundary conditions ...
+Solving linear system ...
+
+
+----------------------- Analysing vascular flow -----------------------
+
+Assigning rheological parameters ...
+Blood pressure = 36.088842 ± 13.773226 mmHg
+Arteriole pressure = 51.999994 ± 0.000003 mmHg
+Capillary pressure = 35.999999 ± 0.000002 mmHg
+Venule pressure = 20.000004 ± 0.000003 mmHg
+Blood flow = 0.000009 ± 0.000058 nl/min
+Arteriole flow = 0.000012 ± 0.000065 nl/min
+Capillary flow = 0.000000 ± 0.000000 nl/min
+Venule flow = 0.000013 ± 0.000070 nl/min
+Blood velocity = 0.000045 ± 0.000115 mm/s
+Arteriole velocity = 0.000000 ± 0.000000 mm/s
+Capillary velocity = 0.000174 ± 0.000169 mm/s
+Venule velocity = 0.000000 ± 0.000000 mm/s
+Vessel Wall Shear Stress = 3.223237 ± 8.205472 dyn/cm2
+Arteriole WSS = 0.000030 ± 0.000063 dyn/cm2
+Capillary WSS = 12.446341 ± 12.050195 dyn/cm2
+Venule WSS = 0.000024 ± 0.000055 dyn/cm2
+Reynolds number = 0.000000 ± 0.000000
+Vascular segment transit time = 33348743.736459 ± 65229401.281135 s

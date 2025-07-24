@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from scipy.interpolate import interp1d
 import pickle
 import os
+import cv2
 join = os.path.join
 arr = np.asarray
 
@@ -704,150 +705,49 @@ def crawl(graph=None,name='images',fname=None,proj_path=None,conc_dir=None,image
         graph.write(ofile)
         
     return graph
-        
-def conc_movie(graph,data=None,time=None,recon_times=None,odir=None,win_width=1920,win_height=1080, quick=False, skip=1, log_scale=False, eye=None, highlight_optic_disc=False, highlight_macula=False,movie_naming=True,cmap_range=[0,0.01],output_mesh=False):
 
+def conc_movie(graph, data=None, time=None, recon_times=None, odir=None,
+               win_width=1920, win_height=1080, quick=False, skip=1, log_scale=False,
+               eye=None, highlight_optic_disc=False, highlight_macula=False,
+               movie_naming=True, cmap_range=[0, 0.01], output_mesh=False):
+    import os
+ 
     if data is None:
-        cfields = [f for f in graph.fieldNames if 'Concentration' in f]
-        nt = len(cfields)
-    else:
-        nt = data.shape[1]
-        cfields = []
-        
+        raise ValueError("data must be provided for numerical-only conc_movie export")
+
+    nt = data.shape[1]
+
     if time is None:
-        time = np.linspace(0,nt-1,nt,dtype='int')
-        time_unit = 'frames'
+        time = np.linspace(0, nt - 1, nt, dtype='int')
     else:
-        time_unit = 'seconds'
+        time = np.array(time)
 
     if recon_times is not None:
-        recon_time_ind = arr([np.argmin(np.abs(time-x)) for x in recon_times])
+        recon_time_ind = np.array([np.argmin(np.abs(time - x)) for x in recon_times])
     else:
-        recon_time_ind = np.linspace(0,nt-1,nt,dtype='int')
-    nrecon = recon_time_ind.shape[0]
+        recon_time_ind = np.linspace(0, nt - 1, nt, dtype='int')
 
-    #cmap_range = [0.,cmax] # 0.002
-    min_radius = 0.
-    
     if not os.path.exists(odir):
-        os.mkdir(odir)
-        
-    scalars = graph.get_scalars()
-    scalarNames = [x['name'] for x in scalars]
-    
-    nEdgePoint = graph.get_data('NumEdgePoints')
+        os.makedirs(odir)
 
-    show = False
-    tp = None
-    
-    domain_type = 'cylinder'
-    if True and eye is not None:
-        domain = eye.domain
-    else:
-        #domain = arr([[-2000,18000],[-10000,10000],[-10000,10000]])
-        domain = arr([[-20000,20000],[-20000,20000],[-10000,10000]])
-        
-    #dims = arr([128,128,1])
-    #dx,dy,dz = (domain[:,1]-domain[:,0])/dims
-    #leakage = np.zeros(dims)
+    frame_dict = {}
 
-    count = 0
-    for i in tqdm(recon_time_ind): #range(0,nt,skip):
-        ind = str(i).zfill(8)
-        cname = f'Concentration_{ind}'
-        
-        if cname not in scalarNames and data is None:
-            print(f'Could not locate {cname}')
-            breakpoint()
-        else:
-        
-            if time is not None:
-                if time_unit=='seconds':
-                    unit_text = 'min.'
-                    nmin = int(np.floor(time[i]/60.))
-                    nsec = int(np.floor(time[i]-nmin*60.))
-                    nms = int((time[i]-nmin*60.-nsec)*1000)
-                    text = f"Time = {nmin:02} min {nsec:02} sec {nms:03} msec"
-                    fid = f"{nmin:02}_{nsec:02}_{nms:03}"
-                else:
-                    unit_text = time_unit
-                    text = f"Time = {time[i]} {unit_text}"
-                    fid = f"{i}"
-            else:
-                text = f"Time = {ind}"
-                fid = f"{ind}"
-        
-            if movie_naming:
-                fid = f"{str(count).zfill(8)}"
-                
-            grab_file = join(odir,f'concentration_{fid}.png')
-            if tp is None:
-                bgcolor = arr([0.,0.,0.]) # arr([0.2,0.2,0.2])
-                tp = graph.plot_graph(show=False,block=False,bgcolor=bgcolor,min_radius=min_radius,domain_type=domain_type,domain=domain,win_width=win_width,win_height=win_height)
-                
-            if data is not None:
-                cur_conc = data[:,i]
-                cur_conc_edge = np.repeat(cur_conc,nEdgePoint)
-                if log_scale:
-                    cur_conc_edge[cur_conc_edge<=0.] = 1e-12
-                    cur_conc_edge = np.log(cur_conc_edge)
-                tp.set_cylinder_colors(edge_color=cur_conc_edge,cmap='gray',cmap_range=cmap_range,scalar_color_name='')
-                
-            else:    
-                tp.set_cylinder_colors(scalar_color_name=cname,cmap='gray',cmap_range=cmap_range)
-            
-            if output_mesh:
-                tp.update()
-                gmesh = tp.cylinders_combined
+    for count, i in enumerate(tqdm(recon_time_ind)):
+        conc = data[:, i].copy()
+        if log_scale:
+            conc[conc <= 0] = 1e-12
+            conc = np.log(conc)
 
-                import open3d as o3d
-                if count==0:
-                    mesh_file = grab_file.replace('.png','.ply')
-                    o3d.io.write_triangle_mesh(mesh_file,gmesh,write_vertex_colors=True)
-                    mesh_vertex_colors_cur = np.asarray(gmesh.vertex_colors)
-                    mesh_vertex_colors = np.zeros([recon_time_ind.shape[0],mesh_vertex_colors_cur.shape[0],3])
-                mesh_vertex_colors_cur = np.asarray(gmesh.vertex_colors)
-                mesh_vertex_colors[count] = mesh_vertex_colors_cur
-            else: 
-                if highlight_optic_disc and eye is not None:
-                    centre = eye.optic_disc_centre
-                    centre[2] = -20.
-                    tp.add_torus(color=[1.,1.,1.,],centre=centre,torus_radius=eye.optic_disc_radius/2.,tube_radius=20.) # radial_resolution=30, tubular_resolution=20
-                if highlight_macula and eye is not None:
-                    centre = eye.fovea_centre
-                    centre[2] = -20.
-                    tp.add_cylinder(color=[0.,0.,0.],centre=centre,radius=eye.fovea_radius,height=20.)
-                    
-                tp.update()
-                tp.screen_grab(grab_file)
-                
-                # Add text overlay
-                if False:
-                    from PIL import Image
-                    from PIL import ImageDraw
-                    from PIL import ImageFont
-                    img = Image.open(grab_file)
-                    I1 = ImageDraw.Draw(img)
-                    #myFont = ImageFont.truetype('FreeMono.ttf', 65)
-                    font_size = np.clip(int(18 * win_width/1080.),18,None)
-                    font = ImageFont.truetype("FreeMono.ttf", font_size)  # /usr/share/fonts/truetype/freefont/
-                    
-                    I1.text((28, 36), text, fill=(255, 255, 255),font=font)
-                    
-                    img.save(grab_file)
-                
-                print(f'Written {grab_file}') 
-            count += 1
-            
-    if output_mesh:
-        ofile = join(odir,f'vertex_colors.npy')
-        for i in range(656): 
-            np.save(ofile.replace('.npy',f'{str(i).zfill(8)}.npy'),mesh_vertex_colors[i])
-        #np.save(ofile,mesh_vertex_colors)
-        print(f'Mesh colours written to {ofile}')
-    
-    tp.destroy_window()
-    
+        key = f"frame_{count:04d}" if movie_naming else str(i)
+        frame_dict[key] = conc
+
+    npz_file = join(odir, "concentration_data.npz")
+    np.savez_compressed(npz_file, **frame_dict)
+
+    print(f" Saved {len(frame_dict)} frames to {npz_file}")
+
+
+
 def recon_conc(graph=None,path=None,gfile=None,geometry_file=None,image_dir=None,conc_dir=None,eye=None,skip=1,recon_times=None,movie_naming=True,delete_previous=True,win_width=1920,win_height=1080,highlight_optic_disc=False,cmax=0.01,log_scale=False,cmap_range=[0.,0.01]):
 
     #win_width = 1920*3

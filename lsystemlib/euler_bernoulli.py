@@ -133,7 +133,9 @@ def euler_bernoulli(x, E=200e9, rho=7800, r=0.05, N=40, Nmodes=12, bcs='cantilev
         plt.plot(x,dx)
         plt.ylabel('displacement [m]')
         #plt.title(['BCs: ' bcs 'Load case: ' loadcase])
-        plt.show()
+        #plt.show()
+        plt.savefig("euler.png", dpi=300)
+        #plt.close()
 
         #plt.subplot(212)
         #plt.plot(x,dtheta) 

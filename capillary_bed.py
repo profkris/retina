@@ -14,6 +14,8 @@ from pymira.spatialgraph import update_array_index,delete_vertices,GVars
 from retinasim import geometry
 from retinasim.eye import Eye
 from retinasim.utility import test_midline_collision, set_and_write_graph, get_graph_fields, filter_graph_by_radius, interpolate_graph, get_node_count, remove_endpoint_nodes, create_edge_node_lookup, remove_all_endpoints, identify_inlet_outlet
+import matplotlib
+matplotlib.use('Agg')
 
 def inside_vol(v0,extent,margin=arr([0.,0.,0.]),centre=arr([0.,0.]),radius=35000.,shape='circ'):
   
@@ -71,28 +73,39 @@ def halton_capillary(npoints=10000,radius=0.5,feature_radius=0.2,centre=arr([0.5
     if plot:
         vor = Voronoi(pts[:,0:2],qhull_options='Qbb Qc Qx')
         fig = voronoi_plot_2d(vor, show_vertices=False, line_colors='orange',line_width=2, line_alpha=0.6, point_size=1, figsize=[1.5,1.5])
-        plt.show()
+        #plt.show()
+        plt.savefig("voronoi.png",dpi=300)
         
     return pts            
-        
+#----------------------------Updated Version-----------------------------#        
 def plot_voronoi(vor_verts,simplexes,graph=None,meshes=None):
     pcd = o3d.geometry.PointCloud()
     pcd.points = o3d.utility.Vector3dVector(vor_verts)
     pcd.paint_uniform_color([0, 0, 1])
+    o3d.io.write_point_cloud("voronoi_points.ply", pcd)
+
     line_set = o3d.geometry.LineSet()
     line_set.points = o3d.utility.Vector3dVector(vor_verts)
     line_set.lines = o3d.utility.Vector2iVector(simplexes)
-    m = [pcd,line_set]
+    o3d.io.write_line_set("voronoi_lines.ply", line_set)
+
+    # m = [pcd,line_set]
+
     if meshes is not None:
-        m.extend(meshes)
-        
+        #m.extend(meshes)
+        for i, mesh in enumerate(meshes):
+            o3d.io.write_triangle_mesh(f"mesh_{i}.ply", mesh)
+
     if graph is not None:
         vis = graph.plot_graph(show=False,block=False)
         cyls = vis.cylinders_combined
-        ms = [line_set,cyls]
-        o3d.visualization.draw_geometries(ms,mesh_show_wireframe=True) 
-    else:   
-        o3d.visualization.draw_geometries(m,mesh_show_wireframe=True) 
+        o3d.io.write_triangle_mesh("graph_cylinders.ply", vis.cylinders_combined)
+        #cyls = vis.cylinders_combined
+        #ms = [line_set,cyls]
+        #o3d.visualization.draw_geometries(ms,mesh_show_wireframe=True) 
+    #else:   
+        #o3d.visualization.draw_geometries(m,mesh_show_wireframe=True) 
+#----------------------------Updated-Version----------------------------#        
 
 def find_voronoi_graph_intersections(edge_region,vertices,coordinates,edge_point_index,region_index,region_simplexes,region_simplex_inds):
 
@@ -492,7 +505,10 @@ def create_capillary_voronoi(graph,eye=None,regular_mesh=False,voronoi_vessel_av
                     plt.plot([pt0[0],pt1[0]],[pt0[1],pt1[1]])
                     plt.scatter(vor_reg_verts[conn_ind,0],vor_reg_verts[conn_ind,1])
                     plt.scatter(pt1[0],pt1[1])
-                    plt.show()
+                    # plt.show()
+                    plt.savefig("capillary_bed.png")
+                    plt.close()
+
                     breakpoint()
     
     #breakpoint()
@@ -507,7 +523,9 @@ def create_capillary_voronoi(graph,eye=None,regular_mesh=False,voronoi_vessel_av
         er = arr(regions[rind])
         everts = vor.vertices[er]
         for i in range(everts.shape[0]): plt.scatter(everts[:,0],everts[:,1])
-        plt.show()
+        #plt.show()
+        plt.savefig("capillary_bed_2.png")
+        plt.close()
      
     intersections = []
     intersecting_simplex = []
@@ -825,8 +843,9 @@ def create_capillary_voronoi(graph,eye=None,regular_mesh=False,voronoi_vessel_av
                 plt.scatter(cur_pts[:,0],cur_pts[:,1])
                 plt.scatter(start_node[0],start_node[1])
                 plt.scatter(end_node[0],end_node[1])
-                plt.show()
-
+                #plt.show()
+                plt.savefig("capillary_bed_3.png")
+                plt.close()
         # Remove old edges
         remove_edge_inds = arr(remove_edge_inds)
         

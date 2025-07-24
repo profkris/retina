@@ -1,0 +1,65 @@
+Exception ignored in: <function ZipFile.__del__ at 0x7ffa0f926c10>
+Traceback (most recent call last):
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
+    self.close()
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
+    self._fpclose(fp)
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
+    fp.close()
+OSError: [Errno 122] Disk quota exceeded
+Exception ignored in: <function ZipFile.__del__ at 0x7f94f667ec10>
+Traceback (most recent call last):
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
+    self.close()
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
+    self._fpclose(fp)
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
+    fp.close()
+OSError: [Errno 122] Disk quota exceeded
+  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 382.39it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 433.83it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 393.33it/s]Exception ignored in: <function ZipFile.__del__ at 0x7fa8bd4f9c10>
+Traceback (most recent call last):
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
+    self.close()
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
+    self._fpclose(fp)
+  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
+    fp.close()
+OSError: [Errno 122] Disk quota exceeded
+
+  0%|          | 0/86 [00:00<?, ?it/s]
+  0%|          | 0/115 [00:00<?, ?it/s]  1%|          | 1/86 [00:00<00:10,  8.18it/s]  1%|          | 1/115 [00:00<00:13,  8.18it/s]100%|██████████| 86/86 [00:00<00:00, 646.02it/s]100%|██████████| 115/115 [00:00<00:00, 834.71it/s]Unhandled exception. System.IO.IOException: Disk quota exceeded : '/scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_vein_upper.csv'
+   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)
+   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)
+   at System.IO.Strategies.BufferedFileStreamStrategy.Flush(Boolean flushToDisk)
+   at System.IO.FileStream.Flush()
+   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+   at System.IO.StreamWriter.Dispose(Boolean disposing)
+   at System.IO.TextWriter.Dispose()
+   at Retina.IO.Write(String path, Network network) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 170
+   at Retina.IO.Write(Network[] N) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 118
+   at Program.<Main>$(String[] args) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/Program.cs:line 28
+
+  0%|          | 0/24050 [00:00<?, ?it/s] 14%|█▍        | 3428/24050 [00:00<00:00, 34277.99it/s] 36%|███▋      | 8778/24050 [00:00<00:00, 38418.62it/s] 57%|█████▋    | 13810/24050 [00:00<00:00, 41352.08it/s] 77%|███████▋  | 18507/24050 [00:00<00:00, 42889.48it/s] 95%|█████████▌| 22914/24050 [00:00<00:00, 43236.59it/s]100%|██████████| 24050/24050 [00:00<00:00, 45619.17it/s]
+  0%|          | 0/4315 [00:00<?, ?it/s]  5%|▌         | 229/4315 [00:00<00:01, 2284.14it/s] 11%|█         | 460/4315 [00:00<00:01, 2290.77it/s] 16%|█▌        | 690/4315 [00:00<00:01, 2292.70it/s] 21%|██▏       | 918/4315 [00:00<00:01, 2288.75it/s] 27%|██▋       | 1146/4315 [00:00<00:01, 2285.82it/s] 32%|███▏      | 1375/4315 [00:00<00:01, 2284.43it/s] 37%|███▋      | 1605/4315 [00:00<00:01, 2287.19it/s] 42%|████▏     | 1833/4315 [00:00<00:01, 2284.81it/s] 48%|████▊     | 2061/4315 [00:00<00:00, 2281.13it/s] 53%|█████▎    | 2287/4315 [00:01<00:00, 2273.24it/s] 58%|█████▊    | 2513/4315 [00:01<00:00, 2267.25it/s] 63%|██████▎   | 2737/4315 [00:01<00:00, 2256.50it/s]Unhandled exception. System.IO.IOException: Disk quota exceeded : '/scratch/vamshis/FINAL/TEST_4/sim00000002/cco/retina_vein_upper.csv'
+   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)
+   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)
+   at System.IO.Strategies.BufferedFileStreamStrategy.WriteSpan(ReadOnlySpan`1 source, ArraySegment`1 arraySegment)
+   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+   at System.IO.StreamWriter.Write(ReadOnlySpan`1 buffer)
+   at System.IO.TextWriter.Write(StringBuilder value)
+   at System.IO.TextWriter.WriteLine(StringBuilder value)
+   at Vascular.IO.Text.SegmentCsv.Write(TextWriter writer, IEnumerable`1 segments, Char sepChar, Func`2 convert)
+   at Retina.IO.Write(String path, Network network) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 169
+   at Retina.IO.Write(Network[] N) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 118
+   at Program.<Main>$(String[] args) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/Program.cs:line 28
+ 69%|██████▊   | 2960/4315 [00:01<00:00, 2240.21it/s] 74%|███████▎  | 3182/4315 [00:01<00:00, 2228.78it/s] 79%|███████▉  | 3404/4315 [00:01<00:00, 2217.28it/s] 84%|████████▍ | 3625/4315 [00:01<00:00, 2206.87it/s] 89%|████████▉ | 3845/4315 [00:01<00:00, 2198.43it/s] 94%|█████████▍| 4065/4315 [00:01<00:00, 2189.54it/s] 99%|█████████▉| 4284/4315 [00:01<00:00, 2179.55it/s]100%|██████████| 4315/4315 [00:01<00:00, 2240.85it/s]
+  0%|          | 0/4241 [00:00<?, ?it/s]  5%|▍         | 211/4241 [00:00<00:01, 2109.93it/s] 10%|█         | 425/4241 [00:00<00:01, 2117.43it/s]
+  0%|          | 0/23501 [00:00<?, ?it/s] 22%|██▏       | 5082/23501 [00:00<00:00, 50813.02it/s] 15%|█▌        | 637/4241 [00:00<00:01, 2117.26it/s] 42%|████▏     | 9927/23501 [00:00<00:00, 50078.06it/s] 20%|██        | 860/4241 [00:00<00:01, 2148.41it/s] 62%|██████▏   | 14515/23501 [00:00<00:00, 48738.62it/s] 25%|██▌       | 1077/4241 [00:00<00:01, 2153.65it/s] 80%|████████  | 18860/23501 [00:00<00:00, 47020.90it/s] 31%|███       | 1296/4241 [00:00<00:01, 2163.92it/s] 98%|█████████▊| 22974/23501 [00:00<00:00, 45084.40it/s] 36%|███▌      | 1515/4241 [00:00<00:01, 2168.60it/s]100%|██████████| 23501/23501 [00:00<00:00, 45775.77it/s] 41%|████      | 1728/4241 [00:00<00:01, 2156.44it/s]
+  0%|          | 0/4256 [00:00<?, ?it/s] 46%|████▌     | 1940/4241 [00:00<00:01, 2145.36it/s]  5%|▌         | 227/4256 [00:00<00:01, 2261.02it/s] 51%|█████     | 2160/4241 [00:01<00:00, 2160.12it/s] 11%|█         | 458/4256 [00:00<00:01, 2274.32it/s] 56%|█████▌    | 2371/4241 [00:01<00:00, 2143.78it/s] 16%|█▌        | 686/4256 [00:00<00:01, 2274.20it/s] 61%|██████    | 2582/4241 [00:01<00:00, 2122.11it/s] 21%|██▏       | 914/4256 [00:00<00:01, 2274.20it/s] 66%|██████▌   | 2793/4241 [00:01<00:00, 2117.35it/s] 27%|██▋       | 1142/4256 [00:00<00:01, 2274.53it/s] 71%|███████   | 3008/4241 [00:01<00:00, 2126.92it/s] 32%|███▏      | 1371/4256 [00:00<00:01, 2278.49it/s] 76%|███████▌  | 3220/4241 [00:01<00:00, 2104.12it/s] 81%|████████  | 3430/4241 [00:01<00:00, 2099.73it/s] 38%|███▊      | 1600/4256 [00:00<00:01, 2280.12it/s] 43%|████▎     | 1826/4256 [00:00<00:01, 2273.98it/s] 48%|████▊     | 2053/4256 [00:00<00:00, 2271.51it/s] 86%|████████▌ | 3642/4241 [00:01<00:00, 2103.85it/s] 91%|█████████ | 3852/4241 [00:01<00:00, 2081.28it/s] 96%|█████████▌| 4061/4241 [00:01<00:00, 2081.78it/s] 54%|█████▎    | 2279/4256 [00:01<00:00, 2267.48it/s] 59%|█████▉    | 2504/4256 [00:01<00:00, 2260.49it/s]100%|██████████| 4241/4241 [00:01<00:00, 2124.26it/s] 64%|██████▍   | 2729/4256 [00:01<00:00, 2254.54it/s] 69%|██████▉   | 2952/4256 [00:01<00:00, 2239.66it/s] 75%|███████▍  | 3175/4256 [00:01<00:00, 2234.28it/s] 80%|███████▉  | 3397/4256 [00:01<00:00, 2221.21it/s] 85%|████████▌ | 3619/4256 [00:01<00:00, 2210.77it/s] 90%|█████████ | 3840/4256 [00:01<00:00, 2197.32it/s] 95%|█████████▌| 4060/4256 [00:01<00:00, 2184.69it/s]100%|██████████| 4256/4256 [00:01<00:00, 2238.00it/s]
+  0%|          | 0/4213 [00:00<?, ?it/s]  5%|▌         | 217/4213 [00:00<00:01, 2165.14it/s] 10%|█         | 436/4213 [00:00<00:01, 2170.82it/s] 15%|█▌        | 653/4213 [00:00<00:01, 2169.65it/s] 21%|██        | 869/4213 [00:00<00:01, 2165.05it/s] 26%|██▌       | 1094/4213 [00:00<00:01, 2188.70it/s] 31%|███       | 1311/4213 [00:00<00:01, 2182.96it/s] 36%|███▌      | 1527/4213 [00:00<00:01, 2175.27it/s] 41%|████▏     | 1741/4213 [00:00<00:01, 2162.25it/s] 47%|████▋     | 1960/4213 [00:00<00:01, 2170.50it/s] 52%|█████▏    | 2182/4213 [00:01<00:00, 2183.26it/s] 57%|█████▋    | 2395/4213 [00:01<00:00, 2164.87it/s] 62%|██████▏   | 2611/4213 [00:01<00:00, 2160.74it/s] 67%|██████▋   | 2825/4213 [00:01<00:00, 2144.01it/s] 72%|███████▏  | 3038/4213 [00:01<00:00, 2114.53it/s] 77%|███████▋  | 3249/4213 [00:01<00:00, 2108.57it/s] 82%|████████▏ | 3466/4213 [00:01<00:00, 2124.16it/s] 87%|████████▋ | 3681/4213 [00:01<00:00, 2129.83it/s] 92%|█████████▏| 3894/4213 [00:01<00:00, 2122.82it/s] 97%|█████████▋| 4106/4213 [00:01<00:00, 2118.21it/s]100%|██████████| 4213/4213 [00:01<00:00, 2147.20it/s]
+
+
+
+real	2m56.404s
+user	0m0.069s
+sys	0m0.287s

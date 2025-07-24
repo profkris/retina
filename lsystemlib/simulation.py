@@ -910,7 +910,9 @@ class Simulation(object):
                         ax.scatter(start_coord[0],start_coord[1],start_coord[2],c='yellow')
                         set_axes_equal(ax)
                                 
-                        plt.show()
+                        #plt.show()
+                        plt.savefig("simulation.png", dpi=300)
+                        plt.close()
                     
                     prob = np.max(prob) - prob
                     prob[direction_forbidden] = 0.
@@ -1157,7 +1159,9 @@ class Simulation(object):
         ax.set_xlabel('X')
         ax.set_ylabel('Y')
         ax.set_zlabel('Z')
-        plt.show()
+        #plt.show()
+        plt.svefig("simulation_1.png",dpi=300)
+        plt.close()
         
     def calculate_branch_end_node_coords(self,start_coord,branch_direction,length):
         return None # for subclass use (e.g. snapping to a surface)

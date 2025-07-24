@@ -242,11 +242,12 @@ def project_to_surface(graph=None,filename=None,vfile=None,efile=None,mesh_file_
     
     graph.set_data(coords_snap,name='VertexCoordinates')
     graph.set_data(points_snap,name='EdgePointCoordinates')
-    
+#----------------------------------------Updated Version----------------------------------------#   
     if plot:
         gmesh = graph.plot_graph(plot=False) #,min_radius=20.)
-        breakpoint()
-        o3d.visualization.draw_geometries([gmesh,mesh],mesh_show_back_face=True,mesh_show_wireframe=False) 
+        #breakpoint()
+        #o3d.visualization.draw_geometries([gmesh,mesh],mesh_show_back_face=True,mesh_show_wireframe=False) 
+        o3d.io.write_triangle_mesh("project_graph.ply", gmesh.to_legacy() if hasattr(gmesh, "to_legacy") else gmesh)
 
     if ofile!='':
         print(f'Writing graph to {ofile}')
@@ -257,11 +258,17 @@ def project_to_surface(graph=None,filename=None,vfile=None,efile=None,mesh_file_
         vtypeEdge = graph.point_scalars_to_edge_scalars(name='VesselType')
         tp = graph.plot_graph(show=False,block=False,min_radius=5.,edge_filter=vtypeEdge==0,cyl_res=10,radius_scale=1)
         gmesh_artery = tp.cylinders_combined
+        if hasattr(gmesh_artery, "to_legacy"):
+            gmesh_artery = gmesh_artery.to_legacy()
+        
         ofile2 = ofile.replace('.am','_artery.ply')
         o3d.io.write_triangle_mesh(ofile2,gmesh_artery)
         tp.destroy_window()
+
         tp = graph.plot_graph(show=False,block=False,min_radius=5.,edge_filter=vtypeEdge==1,cyl_res=10,radius_scale=1)
         gmesh_vein = tp.cylinders_combined
+        if hasattr(gmesh_vein, "to_legacy"):
+            gmesh_vein = gmesh_vein.to_legacy()
         ofile2 = ofile.replace('.am','_vein.ply')
         o3d.io.write_triangle_mesh(ofile2,gmesh_vein)
         
@@ -274,3 +281,4 @@ def project_to_surface(graph=None,filename=None,vfile=None,efile=None,mesh_file_
         tp.destroy_window()
         
     return graph
+#----------------------------------------Updated Version----------------------------------------#   
