@@ -1,281 +1,0 @@
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1636, in simulate_cco_seed
-    save_surface(sim.gpath,filename,sim)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1442, in save_surface
-    np.savez(surface_file,sim.surface_xv,sim.surface_yv,sim.surface,sim.surface_normals,sim.surfaces,sim.surface_vals,sim.seg_vals)
-  File "<__array_function__ internals>", line 180, in savez
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 615, in savez
-    _savez(file, args, kwds, False)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 719, in _savez
-    format.write_array(fid, val,
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1180, in close
-    self._fileobj.seek(self._zinfo.header_offset)
-OSError: [Errno 122] Disk quota exceeded
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 529, in write
-    data[j,:].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1618, in simulate_cco_seed
-    sg = sim.tree.write_amira(gfile)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystemlib/tree.py", line 2107, in write_amira
-    sg.write(gfile) 
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-Exception ignored in: <function ZipFile.__del__ at 0x7fce3a230c10>
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
-    self.close()
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
-    self._fpclose(fp)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
-    fp.close()
-OSError: [Errno 122] Disk quota exceeded
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1636, in simulate_cco_seed
-    save_surface(sim.gpath,filename,sim)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1442, in save_surface
-    np.savez(surface_file,sim.surface_xv,sim.surface_yv,sim.surface,sim.surface_normals,sim.surfaces,sim.surface_vals,sim.seg_vals)
-  File "<__array_function__ internals>", line 180, in savez
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 615, in savez
-    _savez(file, args, kwds, False)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 719, in _savez
-    format.write_array(fid, val,
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1180, in close
-    self._fileobj.seek(self._zinfo.header_offset)
-OSError: [Errno 122] Disk quota exceeded
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 529, in write
-    data[j,:].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1618, in simulate_cco_seed
-    sg = sim.tree.write_amira(gfile)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystemlib/tree.py", line 2107, in write_amira
-    sg.write(gfile) 
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1636, in simulate_cco_seed
-    save_surface(sim.gpath,filename,sim)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1442, in save_surface
-    np.savez(surface_file,sim.surface_xv,sim.surface_yv,sim.surface,sim.surface_normals,sim.surfaces,sim.surface_vals,sim.seg_vals)
-  File "<__array_function__ internals>", line 180, in savez
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 615, in savez
-    _savez(file, args, kwds, False)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/numpy/lib/npyio.py", line 719, in _savez
-    format.write_array(fid, val,
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1180, in close
-    self._fileobj.seek(self._zinfo.header_offset)
-OSError: [Errno 122] Disk quota exceeded
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 529, in write
-    data[j,:].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1618, in simulate_cco_seed
-    sg = sim.tree.write_amira(gfile)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystemlib/tree.py", line 2107, in write_amira
-    sg.write(gfile) 
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-  0%|          | 0/4 [00:00<?, ?it/s]Exception ignored in: <function ZipFile.__del__ at 0x7ff70eea4c10>
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
-    self.close()
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
-    self._fpclose(fp)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
-    fp.close()
-OSError: [Errno 122] Disk quota exceeded
-100%|██████████| 4/4 [00:00<00:00, 160.76it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 471.22it/s]  0%|          | 0/4 [00:00<?, ?it/s]100%|██████████| 4/4 [00:00<00:00, 361.83it/s]Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 169, in generate_lsystem
-    lsystem.simulate_cco_seed(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/lsystem.py", line 1639, in simulate_cco_seed
-    eye_geom.save(join(sim.gpath,'retina_geometry.p'))
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/eye.py", line 51, in save
-    dill.dump(self.__dict__,f)
-OSError: [Errno 122] Disk quota exceeded
-Exception ignored in: <function ZipFile.__del__ at 0x7fa296474c10>
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1821, in __del__
-    self.close()
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1843, in close
-    self._fpclose(fp)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/zipfile.py", line 1953, in _fpclose
-    fp.close()
-OSError: [Errno 122] Disk quota exceeded
-
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 525, in write
-    data[j].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 997, in main
-    combined_graph,mfiles = generate_lsystem(opath=dataPath,lpath=lpath,gfile=ofile,eye=eye)
-  File "main.py", line 187, in generate_lsystem
-    combined_graph = combine_graphs.combine_cco(
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/combine_graphs.py", line 132, in combine_cco
-    graph.write(join(path,ofile))
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-
-  0%|          | 0/102 [00:00<?, ?it/s]
-  0%|          | 0/123 [00:00<?, ?it/s]  1%|          | 1/102 [00:00<00:13,  7.74it/s]  1%|          | 1/123 [00:00<00:15,  7.73it/s]100%|██████████| 102/102 [00:00<00:00, 714.23it/s]100%|██████████| 123/123 [00:00<00:00, 840.86it/s]
-  0%|          | 0/5927 [00:00<?, ?it/s]  4%|▍         | 245/5927 [00:00<00:02, 2447.23it/s] 11%|█▏        | 673/5927 [00:00<00:01, 2807.82it/s] 18%|█▊        | 1086/5927 [00:00<00:01, 3105.62it/s] 25%|██▌       | 1491/5927 [00:00<00:01, 3339.03it/s] 32%|███▏      | 1894/5927 [00:00<00:01, 3518.65it/s]Unhandled exception.  39%|███▊      | 2283/5927 [00:00<00:01, 3619.68it/s] 45%|████▍     | 2660/5927 [00:00<00:00, 3660.62it/s] 51%|█████     | 3029/5927 [00:00<00:00, 3669.18it/s]System.IO.IOException: Disk quota exceeded : '/scratch/vamshis/FINAL/TEST_4/sim00000000/cco/retina_vein_upper.csv'
-   at System.IO.RandomAccess.WriteAtOffset(SafeFileHandle handle, ReadOnlySpan`1 buffer, Int64 fileOffset)
-   at System.IO.Strategies.OSFileStreamStrategy.Write(ReadOnlySpan`1 buffer)
-   at System.IO.Strategies.BufferedFileStreamStrategy.WriteSpan(ReadOnlySpan`1 source, ArraySegment`1 arraySegment)
-   at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
-   at System.IO.StreamWriter.Write(ReadOnlySpan`1 buffer)
-   at System.IO.TextWriter.Write(StringBuilder value)
-   at System.IO.TextWriter.WriteLine(StringBuilder value)
-   at Vascular.IO.Text.SegmentCsv.Write(TextWriter writer, IEnumerable`1 segments, Char sepChar, Func`2 convert)
-   at Retina.IO.Write(String path, Network network) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 169
-   at Retina.IO.Write(Network[] N) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/IO.cs:line 118
-   at Program.<Main>$(String[] args) in /home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/RetinaGen/RetinaGen/Program.cs:line 28
- 57%|█████▋    | 3389/5927 [00:00<00:00, 3641.05it/s] 63%|██████▎   | 3748/5927 [00:01<00:00, 3601.83it/s] 73%|███████▎  | 4355/5927 [00:01<00:00, 4101.38it/s] 84%|████████▍ | 4988/5927 [00:01<00:00, 4585.65it/s] 95%|█████████▍| 5618/5927 [00:01<00:00, 4992.61it/s]100%|██████████| 5927/5927 [00:01<00:00, 4380.79it/s]
-  0%|          | 0/23767 [00:00<?, ?it/s] 21%|██        | 4954/23767 [00:00<00:00, 49533.43it/s] 43%|████▎     | 10191/23767 [00:00<00:00, 50350.37it/s] 63%|██████▎   | 15039/23767 [00:00<00:00, 49772.25it/s] 83%|████████▎ | 19612/23767 [00:00<00:00, 48483.51it/s]100%|██████████| 23767/23767 [00:00<00:00, 47954.77it/s]
-  0%|          | 0/4306 [00:00<?, ?it/s]  5%|▍         | 211/4306 [00:00<00:01, 2106.37it/s] 10%|█         | 440/4306 [00:00<00:01, 2155.82it/s] 16%|█▌        | 673/4306 [00:00<00:01, 2202.61it/s] 21%|██        | 903/4306 [00:00<00:01, 2230.04it/s] 26%|██▋       | 1132/4306 [00:00<00:01, 2246.52it/s] 32%|███▏      | 1362/4306 [00:00<00:01, 2261.76it/s] 37%|███▋      | 1590/4306 [00:00<00:01, 2266.39it/s] 42%|████▏     | 1817/4306 [00:00<00:01, 2264.58it/s] 47%|████▋     | 2043/4306 [00:00<00:01, 2261.47it/s] 53%|█████▎    | 2267/4306 [00:01<00:00, 2253.00it/s] 58%|█████▊    | 2491/4306 [00:01<00:00, 2247.88it/s] 63%|██████▎   | 2713/4306 [00:01<00:00, 2238.88it/s] 68%|██████▊   | 2935/4306 [00:01<00:00, 2230.33it/s] 73%|███████▎  | 3157/4306 [00:01<00:00, 2216.82it/s] 78%|███████▊  | 3378/4306 [00:01<00:00, 2211.94it/s] 84%|████████▎ | 3599/4306 [00:01<00:00, 2207.46it/s] 89%|████████▊ | 3820/4306 [00:01<00:00, 2199.52it/s] 94%|█████████▍| 4040/4306 [00:01<00:00, 2191.33it/s] 99%|█████████▉| 4259/4306 [00:01<00:00, 2180.05it/s]100%|██████████| 4306/4306 [00:01<00:00, 2228.64it/s]
-  0%|          | 0/4217 [00:00<?, ?it/s]  5%|▌         | 215/4217 [00:00<00:01, 2149.57it/s] 10%|█         | 433/4217 [00:00<00:01, 2158.58it/s] 15%|█▌        | 648/4217 [00:00<00:01, 2154.62it/s] 21%|██        | 868/4217 [00:00<00:01, 2166.89it/s] 26%|██▌       | 1084/4217 [00:00<00:01, 2164.78it/s] 31%|███       | 1299/4217 [00:00<00:01, 2159.45it/s] 36%|███▌      | 1514/4217 [00:00<00:01, 2155.40it/s] 41%|████      | 1731/4217 [00:00<00:01, 2157.81it/s] 46%|████▌     | 1940/4217 [00:00<00:01, 2136.93it/s] 51%|█████▏    | 2162/4217 [00:01<00:00, 2158.11it/s] 56%|█████▌    | 2372/4217 [00:01<00:00, 2133.80it/s] 61%|██████    | 2582/4217 [00:01<00:00, 2111.29it/s] 66%|██████▌   | 2791/4217 [00:01<00:00, 2096.63it/s] 71%|███████   | 2999/4217 [00:01<00:00, 2090.16it/s] 76%|███████▌  | 3209/4217 [00:01<00:00, 2090.29it/s] 81%|████████  | 3424/4217 [00:01<00:00, 2107.26it/s] 86%|████████▌ | 3635/4217 [00:01<00:00, 2093.62it/s] 91%|█████████ | 3844/4217 [00:01<00:00, 2082.71it/s] 96%|█████████▌| 4052/4217 [00:01<00:00, 2078.40it/s]100%|██████████| 4217/4217 [00:01<00:00, 2120.34it/s]
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 529, in write
-    data[j,:].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 1002, in main
-    res, amfiles, ofile, graph = vascular_upper_lower(lpath=lpath,convert_to_json=args.convert_to_json,opath=cco_path,join_feeding=True,eye=eye,quiet=args.quiet,macula_fraction=args.macula_fraction)
-  File "main.py", line 440, in vascular_upper_lower
-    ArteryOutPath_am = csv2amira(ArteryOutPath)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/csv2amira.py", line 71, in csv2amira
-    graph.write(ofile)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-
-Traceback (most recent call last):
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 529, in write
-    data[j,:].tofile(f, sep=" ", format="%s")
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-OSError: [Errno 122] Disk quota exceeded
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "main.py", line 1199, in <module>
-    batch(args)
-  File "main.py", line 1152, in batch
-    main(args)
-  File "main.py", line 1019, in main
-    graph.write(cap_file)
-  File "/home/vamshis/miniconda3/envs/retina/lib/python3.8/site-packages/retinasim/pymira/amiramesh.py", line 537, in write
-    f.write('\n')
-OSError: [Errno 122] Disk quota exceeded
-
-real	2m57.399s
-user	0m0.088s
-sys	0m0.285s

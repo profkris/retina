@@ -784,10 +784,9 @@ class RetinaSimulation(Simulation):
                         ax.plot([x,x+normals[i,j,0]*vl], [y,y+normals[i,j,1]*vl], [surface[i,j],surface[i,j]+normals[i,j,2]*vl])
         if show:
             # plt.show()
-            #----------------------------Save Figure
+            # Updated to Save Figure
             plt.savefig("surface_plot_image.png", dpi=300)
             plt.close()
-            #---------------------------
         return ax
         
     def below_midline(self,coords):
@@ -1123,11 +1122,11 @@ class RetinaSimulation(Simulation):
             c0,c1 = seg.start_node.coords,seg.end_node.coords
             plt.plot([c0[0],c1[0]],[c0[1],c1[1]],c='black')
         if show:
-            #----------------Figure Saved
+            # Updated to save figure
             #plt.show()
             plt.savefig('plot.png')
             plt.close()
-            #----------------------------
+
     def calculate_world_branching_direction(self, branch, **kwargs):
     
         prev_dir = branch.get_daughter_initialisation_branch_directions()
@@ -1348,7 +1347,7 @@ class RetinaSimulation(Simulation):
                     ax.plot(coords[:,0],coords[:,1],coords[:,2],c='b')
                     #ax.plot(xint,yint,zint,c='r')
                     #ax.plot(midline[:,0],midline[:,1],midline[:,2],c='r')
-                    #---------------Save Figure
+                    # Updated to Save Figure
                     #plt.show()
                     plt.savefig("lsystem_plot.png")
                     plt.close()
@@ -1656,7 +1655,7 @@ def simulate_cco_seed(prefix='',params=None,max_cycles=10,path=None,plot=False,d
         circ[:,1] = fovea_radius*np.cos(theta) + eye_geom.fovea_centre[1]
         pcd1.points = o3d.utility.Vector3dVector(circ)
         pcd1.paint_uniform_color([0, 0, 1])
-        #------------Disabled GUI Rendering
+        # Updated the code to Disable GUI Rendering
         combined = pcd + pcd1
         for mesh in cylinders:
             points = np.asarray(mesh.vertices)
@@ -1665,7 +1664,6 @@ def simulate_cco_seed(prefix='',params=None,max_cycles=10,path=None,plot=False,d
             combined += mesh_pcd
 
         o3d.io.write_point_cloud("combined_geometry.ply", combined)
-        #----------------------------------
         #o3d.visualization.draw_geometries(cylinders+[pcd,pcd1],mesh_show_wireframe=False)
     
     return gfile
