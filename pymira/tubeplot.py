@@ -2,7 +2,7 @@ import numpy as np
 arr = np.asarray
 norm = np.linalg.norm
 import open3d as o3d
-import pyvista as pv
+#import pyvista as pv
 from tqdm import tqdm, trange
 from pymira import geometry
 
@@ -30,7 +30,6 @@ class TubePlot(object):
                          edge_highlight=[],node_highlight=[],highlight_color=[1,1,1],scalar_color_name=None,log_color=False,
                          show=True,block=True,engine='open3d',domain=None,domain_type='cylinder',ignore_domain=False,additional_meshes=None):
         self.vis = None
-        self.headless = False # If headless mode detected, don't try and display anything
         self.graph = graph
         self.cylinders = cylinders
         self.cylinders_combined = cylinders_combined
@@ -108,9 +107,6 @@ class TubePlot(object):
      
         # Create plot window
         self.create_plot_window()
-        if self.headless:
-            #print('Headless mode! Cannot render image')
-            return
             
         # Set colours (only if raw cylinders have been provided)
         if self.cylinders_combined is None: 
@@ -156,31 +152,6 @@ class TubePlot(object):
             face = np.nanargmin([norm(x-end_coord) for x in intersection])
             coord = intersection[face,:]
             return coord 
-        elif self.domain_type=='rectangle':
-            # Point on each face
-            # Normal to each face
-            pn = arr([[0.,0.,1.],[0.,-1.,0],[0.,1.,0.],[1.,0.,0.]])
-            intersection = np.zeros([4,3]) * np.nan
-            for i in range(4): 
-                pnt = arr([(x[1]-x[0])/2. for x in self.domain])
-                ind = np.where(pn[i]==1)
-                if len(ind[0])>0:                
-                    pnt[ind[0]] = self.domain[ind[0],0]
-                ind = np.where(pn[i]==-1)
-                if len(ind[0])>0:                
-                    pnt[ind[0]] = self.domain[ind[0],1]
-                    
-                dir = end_coord - start_coord
-                coll,pt = geometry.line_plane_intersection(pnt,pn[i],end_coord,dir)
-                # See if intersection point is inside the domain
-                if pt is not None and self.inside_domain(pt):
-                    intersection[i,:] = pt
-            # Find closest intersection that is on the surface of the cubic domain
-            if np.all(~np.isfinite(intersection)):
-                return None
-            face = np.nanargmin([norm(x-end_coord) for x in intersection])
-            coord = intersection[face,:]
-            return coord 
         else:  
             return None                   
             
@@ -192,16 +163,8 @@ class TubePlot(object):
         #if self.domain is None:
         #    return True, None
         # Cuboid domain
-        if self.domain_type=='cuboid' and self.domain is not None:
+        if self.domain_type=='cuboid':
             if np.all(self.domain[:,0]<=coord) and np.all(self.domain[:,1]>=coord):
-                return True, None
-            elif start_coord is not None:
-                dom_int = self.find_domain_intersection(start_coord,coord)
-                return False, dom_int
-            else:
-                return False, None
-        elif self.domain_type=='rectangle' and self.domain is not None:
-            if np.all(self.domain[:2,0]<=coord[:2]) and np.all(self.domain[:2,1]>=coord[:2]):
                 return True, None
             elif start_coord is not None:
                 dom_int = self.find_domain_intersection(start_coord,coord)
@@ -239,24 +202,8 @@ class TubePlot(object):
         else:
             return True, None          
 
-    # Updated the function
-    def register_scalar_to_graph(graph, name):
-        """Ensure scalar is available in graph.fields"""
-        if name not in [f['name'] for f in graph.fields]:
-            data = graph.get_data(name)
-            if data is not None and np.any(np.isfinite(data)):
-                graph.fields.append({
-                    'name': name,
-                    'definition': 'point',
-                    'shape': [1],
-                    'data': data
-                })
-
-    # Updated the function to run in headless mode
-    def set_cylinder_colors(self, edge_color=None, scalar_color_name=None, cmap=None, cmap_range=None, update=True, log_color=None):
-        import matplotlib.pyplot as plt
-
-
+    def set_cylinder_colors(self,edge_color=None,scalar_color_name=None,cmap=None,cmap_range=None,update=True,log_color=None):
+    
         if scalar_color_name is not None:
             self.scalar_color_name = scalar_color_name
         if cmap is not None:
@@ -265,118 +212,101 @@ class TubePlot(object):
             self.cmap_range = cmap_range
         if log_color is not None:
             self.log_color = log_color
-        if edge_color is not None:
-            self.edge_color = edge_color
-            self.color = edge_color
 
         nedge = self.graph.nedge
         nedgepoint = self.graph.nedgepoint
         sind = self.cylinder_inds
-
-        # Step 1: Grab edge_color from scalar name if not provided
+            
+        # Grab scalar data for lookup table, if required
         if edge_color is None and self.edge_color is None:
             scalars = self.graph.get_scalars()
             scalarNames = [x['name'] for x in scalars]
-            for name in scalarNames:
-                print(" -", name)
             if self.scalar_color_name in scalarNames:
-                self.edge_color = self.graph.get_data(self.scalar_color_name)
+                self.edge_color = self.graph.get_data(self.scalar_color_name) # self.graph.point_scalars_to_edge_scalars(name=self.scalar_color_name)
             else:
+                print('TubePlot: Defaulting to blank palette!')
                 self.edge_color = np.ones(nedgepoint)
+        # Use the value passed as argument
         elif edge_color is not None:
             self.edge_color = edge_color
+        # Use the 
         elif self.edge_color is not None:
             pass
         else:
+            print('TubePlot: Defaulting to blank palette!')
             self.edge_color = np.ones(nedgepoint)
-
-        if self.edge_color is None or not np.any(np.isfinite(self.edge_color)):
-            self.edge_color = np.ones(nedgepoint)
-
-        # Step 2: Log scaling if needed
-        if self.log_color:
+                        
+        if self.edge_color is None:
+            #print(f'Error: no edge color provided!')
+            return
+                     
+        if self.log_color:   
             self.edge_color = np.abs(self.edge_color)
-            self.edge_color[self.edge_color <= 0.] = 1e-12
+            self.edge_color[self.edge_color<=0.] = 1e-12
             self.edge_color = np.log(self.edge_color)
-
-        # Step 3: Normalize colormap range
-        if self.cmap_range is None:
-            self.cmap_range = [None, None]
+                            
+        # Set range
         self.cmap_range = arr(self.cmap_range)
-
-        if self.cmap_range[0] is None or not np.isfinite(self.cmap_range[0]):
-            self.cmap_range[0] = np.nanmin(self.edge_color)
-        if self.cmap_range[1] is None or not np.isfinite(self.cmap_range[1]):
-            self.cmap_range[1] = np.nanmax(self.edge_color)
-
-        if self.cmap_range[0] == self.cmap_range[1]:
-            self.cmap_range[1] += 1.0
-
-        if self.cmap_range[0] > self.cmap_range[1]:
-            print('[WARNING] Invalid cmap_range detected.')
-
-        # Step 4: Generate RGB color values
-        cols = None
-        if self.scalar_color_name is not None:
-            if self.scalar_color_name == 'VesselType':
-                cols = np.zeros([nedgepoint, 3])
-                s_art = np.where(self.edge_color == 0)
-                cols[s_art[0], :] = [1., 0., 0.]
-                s_vei = np.where(self.edge_color == 1)
-                cols[s_vei[0], :] = [0., 0., 1.]
-                s_cap = np.where(self.edge_color == 2)
-                cols[s_cap[0], :] = [0.5, 0.5, 0.5]
-                s_oth = np.where((self.edge_color > 2) | (self.edge_color < 0))
-                cols[s_oth[0], :] = [1., 1., 1.]
-            else:
-                cmapObj = plt.cm.get_cmap(self.cmap)
-                edge_color_clean = np.nan_to_num(self.edge_color, nan=self.cmap_range[0])
-                col_inds = np.clip((edge_color_clean - self.cmap_range[0]) / (self.cmap_range[1] - self.cmap_range[0]), 0., 1.)
-                cols = cmapObj(col_inds)[:, 0:3]
-        else:
+        if self.cmap_range[0] is None:
+            self.cmap_range[0] = self.edge_color.min()
+        if self.cmap_range[1] is None:
+            self.cmap_range[1] = self.edge_color.max()
+        if self.cmap_range[0]>self.cmap_range[1]:
+            print('Warning: Invalid Cmap range!')
+            #self.cmap_range[0] = 0.
+            #self.cmap_range[0] = 1.
+        
+        # Set colour map (lookup table) 
+        if self.color is not None:
             cols = self.color
-            if cols is not None and len(cols.shape) == 2 and cols.shape[-1] == 3:
-                if np.max(cols) > 1.:
+        elif self.scalar_color_name=='VesselType':  
+            cols = np.zeros([nedgepoint,3]) 
+            s_art = np.where(self.edge_color==0) 
+            cols[s_art[0],:] = [1.,0.,0.]
+            s_vei = np.where(self.edge_color==1) 
+            cols[s_vei[0],:] = [0.,0.,1.]
+            s_cap = np.where(self.edge_color==2) 
+            cols[s_cap[0],:] = [0.5,0.5,0.5]
+            s_oth = np.where((self.edge_color>2) | (self.edge_color<0)) 
+            cols[s_oth[0],:] = [1.,1.,1.]
+        else:
+            # RGB color
+            if len(self.edge_color.shape)==2 and self.edge_color.shape[-1]==3:
+                cols = self.cols
+                if np.max(cols)>1.:
                     cols = cols / np.max(cols)
+            # Lookup 
+            else:
+                import matplotlib.pyplot as plt
+                cmapObj = plt.cm.get_cmap(self.cmap)
+                col_inds = np.clip((self.edge_color-self.cmap_range[0]) / (self.cmap_range[1]-self.cmap_range[0]),0.,1.)
+                cols = cmapObj(col_inds)[:,0:3]
 
-        if cols is None:
-            print("[ERROR] Color assignment failed. Defaulting to white.")
-            cols = np.ones((nedgepoint, 3))
-
-        # Step 5: Apply highlights
         epi = self.graph.edgepoint_edge_indices()
-        if len(self.edge_highlight) > 0:
+        if len(self.edge_highlight)>0:
             self.edge_highlight = arr(self.edge_highlight)
             for e in np.unique(self.edge_highlight):
-                cols[epi == e] = self.highlight_color
+                cols[epi==e] = self.highlight_color
 
-        # Step 6: Paint cylinders
         for i in sind[0]:
             cyl = self.cylinders[i]
             if cyl is not None:
-                if self.engine == 'open3d':
+                if self.engine=='open3d':
                     cyl.paint_uniform_color(cols[i])
-                elif self.engine == 'pyvista':
+                elif self.engine=='pyvista':
                     pass
-
+                    #cyl['color'] = np.zeros(cyl.n_points) + self.edge_color[i]
+            
         self.combine_cylinders()
-
-        #for s in self.graph.get_scalars():
-            #print(" -", s['name'])
-
-        # Optional: highlight nodes
-        if len(self.node_highlight) > 0:
+        
+        if len(self.node_highlight)>0:
             nodes = self.graph.get_data('VertexCoordinates')
-            self.vis.add_point_cloud(nodes[self.node_highlight], color=[1., 1., 1.])
-
+            self.vis.add_point_cloud(nodes[self.node_highlight],color=[1.,1.,1.]) # Deactivated at initialisation by existing vessels
+        
         if update:
             self.update()
-
-
-    # Updated the function to run in headless mode
+            
     def add_torus(self,centre=arr([0.,0.,0.]),color=arr([1.,1.,1.]),**kwargs):
-        if self.headless:
-            return
         torus = o3d.geometry.TriangleMesh.create_torus(**kwargs) # torus_radius=1.0, tube_radius=0.5, radial_resolution=30, tubular_resolution=20
         # Simple translation (TODO: Add rotation, etc.)
         torus = torus.translate(centre, relative=False)
@@ -387,32 +317,8 @@ class TubePlot(object):
         else:
             self.additional_meshes += torus
         self.update()
-
-    def get_numpy_image(self):
-    # Only if you're using Open3D and offscreen rendering is available
-        img = self.vis.capture_screen_float_buffer(do_render=True)
-        img_np = np.asarray(img)
-        img_np = (img_np * 255).astype(np.uint8)
-        return img_np
-
-    def add_sphere(self,centre=arr([0.,0.,0.]),color=arr([1.,1.,1.]),**kwargs):
-        # kwargs: radius, resolution
-        if self.headless:
-            return
-        sphere = o3d.geometry.TriangleMesh.create_sphere(**kwargs) # torus_radius=1.0, tube_radius=0.5, radial_resolution=30, tubular_resolution=20
-        # Simple translation (TODO: Add rotation, etc.)
-        sphere = sphere.translate(centre, relative=False)
-        sphere.paint_uniform_color(color)
-        if self.additional_meshes is None:
-            self.additional_meshes = sphere
-            self.vis.add_geometry(self.additional_meshes)
-        else:
-            self.additional_meshes += sphere
-        self.update()
         
     def add_cylinder(self,centre=arr([0.,0.,0.]),color=arr([1.,1.,1.]),**kwargs):
-        if self.headless:
-            return
         cyl = o3d.geometry.TriangleMesh.create_cylinder(**kwargs)
         # Simple translation (TODO: Add rotation, etc.)
         cyl = cyl.translate(centre, relative=False)
@@ -426,8 +332,6 @@ class TubePlot(object):
         self.update()
         
     def add_mesh(self,mesh,color=arr([1.,1.,1.]),**kwargs):
-        if self.headless:
-            return
         mesh.paint_uniform_color(color)
         # For now, add it in to the combined mesh. TODO: Have a dedicated set of additional meshes
         if self.additional_meshes is None:
@@ -438,8 +342,6 @@ class TubePlot(object):
         self.update()
         
     def add_point_cloud(self,points,color=arr([1.,1.,1.]),**kwargs):
-        if self.headless:
-            return
         pointcloud = o3d.geometry.PointCloud()
         pointcloud.points = o3d.utility.Vector3dVector(points)
         
@@ -462,8 +364,6 @@ class TubePlot(object):
         self.update()
         
     def create_plot_cylinders(self):
-        if self.headless:
-            return
     
         nc = self.graph.get_data('VertexCoordinates')
         points = self.graph.get_data('EdgePointCoordinates')
@@ -546,25 +446,12 @@ class TubePlot(object):
                                     #self.cylinders[i0+j] = tube
                                     
                                 excl = False
-
-        # Combine all individual cylinders into a single mesh
-        cyl_list = [cyl for cyl in self.cylinders if cyl is not None]
-        if cyl_list:
-            self.cylinders_combined = cyl_list[0]
-            for cyl in cyl_list[1:]:
-                self.cylinders_combined += cyl
-        else:
-            self.cylinders_combined = None
-
-
+                
         self.cylinder_inds = np.where(self.cylinders)
         #breakpoint()
         #o3d.visualization.draw_geometries(self.cylinders[self.cylinders!=None][:50])
-
-    # Updated the function to run in headless mode
+        
     def combine_cylinders(self):
-        if self.headless:
-            return
     
         if self.engine=='open3d':
             if self.vis is not None:
@@ -592,38 +479,40 @@ class TubePlot(object):
             #self.cylinders_combined = blocks.combine()
             #self.vis.add_mesh(self.cylinders_combined, smooth_shading=True, scalar_bar_args={'title':self.scalar_color_name}) # scalars='length', 
             #self.vis.show()
+        
+    def create_plot_window(self,bgcolor=None,win_width=None,win_height=None):
     
-   # Updated the function to run in headless mode
-    def create_plot_window(self, bgcolor=None, win_width=None, win_height=None):
-
-        # Update window size or background color if specified
         if win_width is not None:
             self.win_width = win_width
         if win_height is not None:
             self.win_height = win_height
         if bgcolor is not None:
-            self.bgcolor = bgcolor
-
-        if self.engine == 'open3d':
-            self.headless = True  # We are running without GUI display
-
-            # Export colored .ply of vessels
+            self.bgcolor = bgcolor                      
+    
+        if self.engine=='open3d':
+            self.vis = o3d.visualization.Visualizer() #O3DVisualizer()
+            self.vis.create_window(width=self.win_width,height=self.win_height,visible=self.show)
+        
             if self.cylinders_combined is not None:
-                self.export_colored_ply("cylinders_combined_colored.ply")
-            else:
-          
-        elif self.engine == 'pyvista':
-            pass  # You mentioned PyVista is not working, so leave this blank or disabled
-
-    # Updated the function to run in headless mode
-    def show_plot(self):
-        if self.vis is not None and self.headless==False:
+                self.vis.add_geometry(self.cylinders_combined)
+            if self.additional_meshes is not None:
+                self.vis.add_geometry(self.additional_meshes)
+            
+            opt = self.vis.get_render_option()
+            opt.background_color = np.asarray(self.bgcolor)
+        elif self.engine=='pyvista':
+            pass
+            #self.vis = pv.Plotter(window_size=[self.win_width,self.win_height])
+            #self.vis.set_background(self.bgcolor)
+        
+    def _show_plot(self):
+        if self.vis is not None:
             self.vis.run()
             self.vis.destroy_window()
         
     def update(self):
         if self.engine=='open3d':
-            if self.vis is not None and self.headless==False:
+            if self.vis is not None:
                 meshes = []
                 #breakpoint()
                 if self.additional_meshes is not None:
@@ -631,21 +520,12 @@ class TubePlot(object):
                 if self.cylinders_combined is not None: 
                     meshes.append(self.cylinders_combined)
                     self.vis.update_geometry(self.cylinders_combined)
-
-    # Updated the function to run in headless mode
-    def screen_grab(self, filename=None, return_image=False):
-        if self.headless or self.vis is None:
-            #print("screen_grab skipped: Headless mode active or vis is None.")
-            return None
-
-        image = self.vis.capture_screen_float_buffer(True)
-        image_np = (np.asarray(image) * 255).astype(np.uint8)
-        if filename is not None:
-            import imageio
-            imageio.imwrite(filename, image_np)
-        if return_image:
-            return image_np
-
+        
+    def screen_grab(self,fname):
+        if self.engine=='open3d':
+            if self.vis is not None:
+                self.vis.capture_screen_image(fname,do_render=True)     
+        
     def destroy_window(self):
         if self.engine=='open3d':
             if self.vis is not None:
@@ -653,27 +533,3 @@ class TubePlot(object):
                 self.vis.destroy_window()  
                 del control
                 del self.vis            
-
-    def export_colored_ply(self, filename="cylinders_combined_colored.ply"):
-        if self.cylinders_combined is None:
-            print("No cylinders to export.")
-            return
-
-        # Ensure cylinder colors are up-to-date
-        self.set_cylinder_colors(scalar_color_name='Flow',cmap='jet',log_color=True,update=False)
-
-        # Build a flat list of vertex colors from all individual cylinders
-        colors = []
-        for cyl in self.cylinders:
-            if cyl is not None:
-                verts = np.asarray(cyl.vertices)
-                col = cyl.vertex_colors[0] if len(cyl.vertex_colors) else [1, 1, 1]
-                colors.extend([col] * verts.shape[0])
-
-        # Assign the color data to the combined mesh
-        self.cylinders_combined.vertex_colors = o3d.utility.Vector3dVector(colors)
-
-        # Write to PLY file
-        o3d.io.write_triangle_mesh(filename, self.cylinders_combined)
-        #print(f"[SAVE] Colored PLY written: {filename}")
-    
