@@ -3,8 +3,6 @@ arr = np.asarray
 #from pymira import spatialgraph
 from skimage.graph import route_through_array
 from matplotlib import pyplot as plt
-import matplotlib
-matplotlib.use('Agg') 
 
 class Midline2Graph(object):
 
@@ -48,13 +46,13 @@ class Midline2Graph(object):
         edgepoints = np.where(self.midline>0)
         connections = []
         nconn = np.zeros(len(edgepoints[0]),dtype='int')
-
+        
         # Loop through each midline point, connecting it to each filled neighbour
         for ind in range(len(edgepoints[0])):
             i,j,k = edgepoints[0][ind],edgepoints[1][ind],edgepoints[2][ind]
             # Find filled neighbours
             neigh,offsets = self.get_neighbours(self.midline,i,j,k)            
-            sneigh = np.where((np.isfinite(neigh)) & (neigh>0))
+            sneigh = np.where((np.isfinite(neigh)) & (neigh==1))
             # Loop through each neighbour and find which edge point index it refers to
             for ni in range(len(sneigh[0])):
                 nii,njj,nkk = offsets[sneigh[0][ni],sneigh[1][ni],sneigh[2][ni]]
@@ -159,6 +157,5 @@ class Midline2Graph(object):
             z = [edgepoints[conn[0],2],edgepoints[conn[1],2]]
             plt.plot(x,y,z)
         
-        #plt.show()
-        plt.savefig('midline_graph.png', dpi=300)  # Save plot as PNG file
-        plt.close()                
+        plt.show()
+                        
