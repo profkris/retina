@@ -342,32 +342,7 @@ def point_in_cylinder(pt1, pt2, r, q):
     if np.all(pt1==pt2) or np.all(r<=0.):
         return False
     vec = pt2 - pt1
-    cylinder_lengths = np.linalg.norm(pt2-pt1,axis=1)
-    cylinder_centers = (pt2 - pt1)/2.
-    cylinder_axes = (vec.transpose() / cylinder_lengths).transpose()
-    #const = r * np.linalg.norm(vec)
-    
-    # Calculate vectors from cylinder centers to points
-    vecs = q[:, np.newaxis, :] - cylinder_centers[np.newaxis, :, :]  # shape (n, m, 3)
-    
-    # Project vecs onto cylinder_axes
-    dot_products = np.sum(vecs * cylinder_axes[np.newaxis, :, :], axis=2)  # shape (n, m)
-    projections = dot_products[..., np.newaxis] * cylinder_axes[np.newaxis, :, :]  # shape (n, m, 3)
-
-    # Calculate the perpendicular distance from points to cylinder axes
-    perpendicular_vecs = vecs - projections  # shape (n, m, 3)
-    perpendicular_distances = np.linalg.norm(perpendicular_vecs, axis=2)  # shape (n, m)
-
-    # Calculate the heights of the projections
-    heights = dot_products  # shape (n, m)
-
-    # Check if points are within the cylinder radius and height
-    inside_radius = perpendicular_distances <= r[np.newaxis, :]  # shape (n, m)
-    inside_height = (heights >= 0) & (heights <= cylinder_lengths[np.newaxis, :])  # shape (n, m)
-
-    # Points inside any cylinder
-    return np.any(inside_radius & inside_height, axis=1)
-    
+    const = r * np.linalg.norm(vec)
     e1 = np.dot(q - pt1, vec.transpose()) >= 0
     e2 = np.dot(q - pt2, vec.transpose()) <= 0
     e3 = np.linalg.norm(np.cross(q - pt1, vec),axis=1) <= const
