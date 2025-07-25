@@ -76,15 +76,6 @@ def combine_graphs(graph1,graph2):
     graphComb.set_definition_size('POINT',npoints1+npoints2)
     graphComb.nedgepoints = npoints1+npoints2
     graphComb.set_graph_sizes()
-
-    if 'NodeLabel' in graphComb.fieldNames:
-        newNodeLabel = np.linspace(0,graphComb.nnode-1,graphComb.nnode,dtype='int')
-        graphComb.set_data(newNodeLabel,name='NodeLabel')
-    if 'EdgeLabel' in graphComb.fieldNames:
-        newEdgeLabel = np.linspace(0,graphComb.nedge-1,graphComb.nedge,dtype='int')
-        npoints = graphComb.get_data('NumEdgePoints')
-        graphComb.set_data(np.repeat(newEdgeLabel,npoints),name='EdgeLabel')
-    
     return graphComb
     
 def combine_cco(path,mFiles,ofile):
@@ -132,4 +123,3 @@ def combine_cco(path,mFiles,ofile):
         graph.write(join(path,ofile))
     
     return graph
-
