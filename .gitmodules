@@ -1,6 +1,0 @@
-[submodule "Reanimate"]
-	path = Reanimate
-	url = git@github.com:simonwalkersamuel/Reanimate.git
-[submodule "cyclegan"]
-	path = cyclegan
-	url = git@github.com:emmeline-brown/cyclegan.git
