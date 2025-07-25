@@ -1507,9 +1507,7 @@ class SpatialGraph(amiramesh.AmiraMesh):
         #fig.patch.set_alpha(0) # transparent
         plt.xlabel = field_name
         #plt.gca().set_xscale("log")
-        #plt.show()
-        plt.savefig("spatialgraph_1.png", dpi=300)
-        plt.close()
+        plt.show()
         return fig
         
     def plot_pv(self,cylinders=None, vessel_type=None, color=None, edge_color=None, plot=True, grab=False, min_radius=0., \
@@ -3002,9 +3000,7 @@ class Editor(object):
                         ax3d.plot(pcur[:,0], pcur[:,1], pcur[:,2], 'b')
                         ax3d.plot(pcur[:,0], pcur[:,1], pcur[:,2], 'b*')
                         ax3d.plot(pts[:,0], pts[:,1], pts[:,2], 'r*')
-                        #plt.show()
-                        plt.savefig("spatialgraph_2.png", dpi=300)
-                        plt.close()
+                        plt.show()
                         breakpoint()
                 else:
                     breakpoint()
