@@ -77,7 +77,8 @@ def halton_capillary(npoints=10000,radius=0.5,feature_radius=0.2,centre=arr([0.5
         plt.savefig("voronoi.png",dpi=300)
         
     return pts            
-#----------------------------Updated Version-----------------------------#        
+
+# Updated the plot voronoi       
 def plot_voronoi(vor_verts,simplexes,graph=None,meshes=None):
     pcd = o3d.geometry.PointCloud()
     pcd.points = o3d.utility.Vector3dVector(vor_verts)
@@ -105,7 +106,6 @@ def plot_voronoi(vor_verts,simplexes,graph=None,meshes=None):
         #o3d.visualization.draw_geometries(ms,mesh_show_wireframe=True) 
     #else:   
         #o3d.visualization.draw_geometries(m,mesh_show_wireframe=True) 
-#----------------------------Updated-Version----------------------------#        
 
 def find_voronoi_graph_intersections(edge_region,vertices,coordinates,edge_point_index,region_index,region_simplexes,region_simplex_inds):
 

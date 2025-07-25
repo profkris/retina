@@ -242,7 +242,8 @@ def project_to_surface(graph=None,filename=None,vfile=None,efile=None,mesh_file_
     
     graph.set_data(coords_snap,name='VertexCoordinates')
     graph.set_data(points_snap,name='EdgePointCoordinates')
-#----------------------------------------Updated Version----------------------------------------#   
+
+    # Updated the block to run on headless mode
     if plot:
         gmesh = graph.plot_graph(plot=False) #,min_radius=20.)
         #breakpoint()
@@ -281,4 +282,3 @@ def project_to_surface(graph=None,filename=None,vfile=None,efile=None,mesh_file_
         tp.destroy_window()
         
     return graph
-#----------------------------------------Updated Version----------------------------------------#   
