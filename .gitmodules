@@ -1,9 +1,0 @@
-[submodule "Reanimate"]
-	path = Reanimate
-	url = git@github.com:simonwalkersamuel/Reanimate.git
-[submodule "pymira"]
-	path = pymira
-	url = git@github.com:CABI-SWS/pymira.git
-[submodule "cyclegan"]
-	path = cyclegan
-	url = git@github.com:emmeline-brown/cyclegan.git
