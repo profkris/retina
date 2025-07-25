@@ -384,7 +384,7 @@ def fovea_test():
     coords, faces, edge_verts, normals, mesh =   fovea_sim(nr=nr,nproj=nproj,shoulder_height=[100.,100.],fw=fw,dr=fovea_depth,flatness=flatness,boundary_height=[0.,0.],shoulder_sd=shoulder_sd,plot=False)
     #coords2, faces2 = fovea_sim_raised(nr=nr,nproj=nproj,fw=fw,dr=fovea_depth*0.1,flatness=flatness,boundary_height=[-1.5*fovea_depth,-1.5*fovea_depth],plot=False)
     #coords3, faces3 = fovea_sim_raised(nr=nr,nproj=nproj,fw=fw,dr=fovea_depth,flatness=flatness,boundary_height=[-3*fovea_depth,-3*fovea_depth],plot=False)
-    #-----------------------Updated Visualization Part---------------------------------#   
+    # Updated the if Block 
     if True:
         import open3d as o3d
         mesh = o3d.geometry.TriangleMesh() #.create_from_point_cloud_ball_pivoting(pcd, o3d.utility.DoubleVector(radii))
@@ -393,10 +393,8 @@ def fovea_test():
         mesh.vertices = o3d.utility.Vector3dVector(coords)
         mesh.vertex_normals = o3d.utility.Vector3dVector(normals)
         mesh.triangles = o3d.utility.Vector3iVector(faces)
-        #o3d.visualization.draw_geometries([mesh],mesh_show_wireframe=True) #,mesh_show_back_face=True)
         o3d.io.write_triangle_mesh(os.path.join(output_dir, "fovea_output_2.ply"), mesh)
         return
-        #---------------------------------------END---------------------------------------#
 
     import matplotlib.tri as mtri
     triang = mtri.Triangulation(coords[:,0], coords[:,1], triangles=faces)
@@ -503,12 +501,11 @@ def on_test():
     meshes[src_ind] = mesh
     
     # Interrogate where rays from mesh 1 intersect with mesh 2
-    #--------------------------------Updated Section------------------------------#
+    # Updated the visualization section
     o3d.io.write_triangle_mesh("mesh_display_free_output.ply", mesh)
 
     # Optional: remove this if not debugging
     breakpoint()
-    #--------------------------------Updated Section------------------------------#
 
 def hole_test():
 
