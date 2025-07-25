@@ -1,0 +1,63 @@
+# AmiraMesh 3D ASCII 2.0
+
+define VERTEX 5
+define EDGE 4
+define POINT 12
+
+Parameters {
+   ContentType "HxSpatialGraph"
+}
+
+VERTEX { float[3] VertexCoordinates } @1 
+EDGE { int[2] EdgeConnectivity } @2 
+EDGE { int NumEdgePoints } @3 
+POINT { float[3] EdgePointCoordinates } @4 
+POINT { float Radii } @5 
+
+# Data section
+@1
+0.0 0.0 0.0
+1.0 0.0 0.0
+1.0 1.0 0.0
+2.0 2.0 0.0
+2.0 5.0 0.0
+
+@2
+0 1
+1 2
+2 3
+3 4
+
+@3
+3
+3
+3
+3
+
+@4
+0.0 0.0 0.0
+0.5 0.0 0.0
+1.0 0.0 0.0
+1.0 0.0 0.0
+1.5 0.5 0.0
+1.0 1.0 0.0
+1.0 1.0 0.0
+2.0 1.6 0.0
+2.0 2.0 0.0
+2.0 2.0 0.0
+1.7 4.5 0.0
+2.0 5.0 0.0
+
+@5
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
+0.1
