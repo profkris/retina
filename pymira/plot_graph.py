@@ -2,12 +2,10 @@ import numpy as np
 import os
 join = os.path.join
 
-# from mayavi import mlab # Disable GUI
+from mayavi import mlab
 import matplotlib as mpl
 from pymira import spatialgraph
 from tqdm import trange
-import open3d as o3d
-
 
 class Graph(object):
 
@@ -67,43 +65,7 @@ class Graph(object):
             
     def get_coords(self):
         return self.coords[:self.ncoords]
-    
-    # Added new function
-    def write_ply(graph, scalar=None, log_scale=False, cmap='jet', cmap_range=None, filename='output.ply'):
-        print(f"[INFO] write_ply() called for {scalar}")
-    
-        points = graph.get_data('VertexCoordinates')
-        edges = graph.get_data('EdgeConnectivity')
-        scalars = graph.get_data(scalar) if scalar else None
-
-        if scalars is None:
-            print(f"[ERROR] No scalar data found for '{scalar}'.")
-            return
-
-        lines = []
-        colors = []
-
-        for i, (start, end) in enumerate(edges):
-            lines.append([start, end])
-            val = scalars[i]
-            if log_scale:
-                val = np.log1p(np.abs(val))
-
-            norm_val = (val - cmap_range[0]) / (cmap_range[1] - cmap_range[0]) if cmap_range else val
-            norm_val = np.clip(norm_val, 0.0, 1.0)
-            rgb = plt.get_cmap(cmap)(norm_val)[:3]
-            colors.append(rgb)
-
-        line_set = o3d.geometry.LineSet()
-        line_set.points = o3d.utility.Vector3dVector(points)
-        line_set.lines = o3d.utility.Vector2iVector(lines)
-        line_set.colors = o3d.utility.Vector3dVector(colors)
-
-        print(f"[INFO] Saving line set to {filename}...")
-        o3d.io.write_line_set(filename, line_set)
-        print(f"[SUCCESS] Saved {filename}")
-
-
+        
     def set_coords(self, coords):
         self.ncoords = coords.shape[0]
         self.coords[:self.ncoords] = coords
@@ -301,11 +263,10 @@ class PlotGraph(Graph):
         self.initialise_plot()
         if show:
             self.show()
-    # Updated the function to run in headless mode
-    def show(self):
-        #mlab.show()
-        o3d.io.write_triangle_mesh("plot_mesh.ply", self.mesh)
         
+    def show(self):
+        mlab.show()
+
     def initialise_graph(self,graph_file):
 
         self.display_elements_3d = {'Image':True,'Segments':True,'Nodes':True}
@@ -322,45 +283,33 @@ class PlotGraph(Graph):
 
         # Load graph
         self.graph = Graph(graph_file)
-
-    # Updated the function to run in headless mode
+           
     def initialise_plot(self):
+
         self.plot_selected = None
+
         self.image_3d = None
-        self.mlab_wid, self.mlab_hei = 1500, 1500
+        self.mlab_wid,self.mlab_hei = 1500,1500
+        
+        if self.figure is None:
+            self.figure = mlab.figure(size=(self.mlab_wid, self.mlab_hei))
+        #picker = self.fig3d.on_mouse_pick(self.mlab_picker_callback)
 
-        self.line3d = []
-        geometries = []
+        # Add plots...
+        self.lines3d = []
         lim = None
-
         for i in trange(self.nconns):
             line = self.create_3d_line_plot(i)
-            if line is not None:
-                self.line3d.append(line)
-                geometries.append(line)
-            if lim is not None and i > lim:
+            self.lines3d.append(line)
+            if lim is not None and i>lim:
                 break
-
+        
         if self.plot_nodes:
             for i in range(self.ncoords):
-                point = self.add_3d_scatter_point(i, active=False)
-                if point is not None:
-                    geometries.append(point)
-                if lim is not None and i > lim:
+                self.add_3d_scatter_point(i,active=False)   
+                if lim is not None and i>lim:
                     break
         
-        mesh = o3d.geometry.TriangleMesh()
-        for g in geometries:
-            if isinstance(g, o3d.geometry.LineSet):
-                g = g.to_triangle_mesh()
-            elif isinstance(g, o3d.geometry.PointCloud):
-                g, _ = g.compute_convex_hull()
-            mesh += g
-
-        mesh.compute_vertex_normals()
-        o3d.io.write_triangle_mesh("plot_graph_scene.ply", mesh)
-
- 
     def get_line_color(self, edgeIndex):
         if self.line_color_property is not None:
             edge = self.get_edge(edgeIndex)
